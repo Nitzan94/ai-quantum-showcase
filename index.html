@@ -788,11 +788,20 @@
     <nav class="fixed top-0 left-0 right-0 z-50 p-6">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
             <div class="text-2xl font-bold neon-text text-cyan-400">NITZAN BAR-NESS</div>
-            <div class="hidden md:flex items-center gap-8">
-                <a href="#mcp" class="text-gray-300 hover:text-cyan-400 transition-colors">Protocol</a>
-                <a href="#claude-code" class="text-gray-300 hover:text-cyan-400 transition-colors">Code</a>
-                <a href="#elevenlabs" class="text-gray-300 hover:text-cyan-400 transition-colors">Audio</a>
-                <a href="#demo" class="text-gray-300 hover:text-cyan-400 transition-colors">Demo</a>
+            <div class="flex items-center gap-4">
+                <!-- Mobile Neuroscience Button -->
+                <a href="neuroscience-explained.html" class="md:hidden bg-purple-500 hover:bg-purple-600 text-white px-3 py-2 rounded-full text-xs font-bold transition-all duration-300 hover:scale-110 flex items-center gap-1">
+                    <span>🧠</span>
+                    <span>Science</span>
+                </a>
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#mcp" class="text-gray-300 hover:text-cyan-400 transition-colors">Protocol</a>
+                    <a href="#claude-code" class="text-gray-300 hover:text-cyan-400 transition-colors">Code</a>
+                    <a href="#elevenlabs" class="text-gray-300 hover:text-cyan-400 transition-colors">Audio</a>
+                    <a href="#demo" class="text-gray-300 hover:text-cyan-400 transition-colors">Demo</a>
+                    <a href="neuroscience-explained.html" class="text-gray-300 hover:text-cyan-400 transition-colors">Science</a>
+                </div>
             </div>
         </div>
     </nav>
