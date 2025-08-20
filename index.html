@@ -473,8 +473,8 @@
             }
             
             /* כותרת DIGITAL NEUROSCIENCE - צמצום לגבולות במובייל */
-            .text-6xl:has-text("DIGITAL NEUROSCIENCE"),
-            h2.text-6xl {
+            h2.text-6xl.font-black.text-center.mb-16.neon-text,
+            .text-6xl {
                 font-size: 1.8rem !important;
                 line-height: 0.95 !important;
                 padding: 0 0.25rem !important;
@@ -1646,6 +1646,18 @@
             matrixBtn.addEventListener('touchstart', async (e) => {
                 console.log('🎵 Matrix button touchstart event');
                 
+                // Force create new AudioContext if needed
+                if (!window.matrixSounds || !window.matrixSounds.audioContext) {
+                    console.log('🎵 Creating new MatrixSounds instance for mobile');
+                    try {
+                        const { MatrixSounds } = await import('./src/js/matrix-effect.js');
+                        window.matrixSounds = new MatrixSounds();
+                        console.log('🎵 New MatrixSounds created');
+                    } catch (error) {
+                        console.error('🎵 Failed to create MatrixSounds:', error);
+                    }
+                }
+                
                 // Force initialize and resume audio context for mobile
                 if (window.matrixSounds && window.matrixSounds.audioContext) {
                     console.log('🎵 AudioContext state:', window.matrixSounds.audioContext.state);
@@ -1656,17 +1668,37 @@
                         console.error('🎵 Failed to resume AudioContext:', error);
                     }
                 } else {
-                    console.warn('🎵 MatrixSounds or AudioContext not found');
+                    console.warn('🎵 MatrixSounds or AudioContext not found after creation attempt');
                 }
                 
                 startMatrixFlicker();
                 
-                // Try to play sound effect
+                // Try to play sound effect with fallback
                 try {
-                    window.matrixSounds.play('hover');
-                    console.log('🎵 Hover sound played');
+                    if (window.matrixSounds && window.matrixSounds.play) {
+                        window.matrixSounds.play('entrance');
+                        console.log('🎵 Entrance sound played');
+                    } else {
+                        // Fallback - create simple beep
+                        console.log('🎵 Using fallback beep sound');
+                        const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                        const oscillator = audioContext.createOscillator();
+                        const gainNode = audioContext.createGain();
+                        
+                        oscillator.connect(gainNode);
+                        gainNode.connect(audioContext.destination);
+                        
+                        oscillator.frequency.setValueAtTime(440, audioContext.currentTime);
+                        gainNode.gain.setValueAtTime(0.1, audioContext.currentTime);
+                        gainNode.gain.exponentialRampToValueAtTime(0.001, audioContext.currentTime + 0.3);
+                        
+                        oscillator.start();
+                        oscillator.stop(audioContext.currentTime + 0.3);
+                        
+                        console.log('🎵 Fallback beep created');
+                    }
                 } catch (error) {
-                    console.error('🎵 Failed to play sound:', error);
+                    console.error('🎵 Failed to play any sound:', error);
                 }
             }, { passive: true });
             
