@@ -475,12 +475,13 @@
             /* כותרת DIGITAL NEUROSCIENCE - צמצום לגבולות במובייל */
             .text-6xl:has-text("DIGITAL NEUROSCIENCE"),
             h2.text-6xl {
-                font-size: 2.2rem !important;
-                line-height: 1.0 !important;
-                padding: 0 0.5rem !important;
+                font-size: 1.8rem !important;
+                line-height: 0.95 !important;
+                padding: 0 0.25rem !important;
                 word-break: break-word !important;
                 text-align: center !important;
                 hyphens: auto !important;
+                letter-spacing: -0.02em !important;
             }
             
             /* הקטנת כותרת ופסקה ב-CTA */
@@ -510,6 +511,23 @@
                 padding: 0.75rem 1rem !important;
                 font-size: 0.85rem !important;
                 min-width: auto !important;
+                text-align: center !important;
+            }
+            
+            /* תיקון כפתורי CTA במובייל */
+            .holographic-card.px-8.py-4 {
+                padding: 0.75rem 1.25rem !important;
+                font-size: 0.9rem !important;
+                flex-direction: column !important;
+                gap: 0.25rem !important;
+            }
+            
+            .holographic-card.px-8.py-4 span:first-child {
+                font-size: 1.2rem !important;
+            }
+            
+            .holographic-card.px-8.py-4 span:last-child {
+                font-size: 0.85rem !important;
                 text-align: center !important;
             }
         }
@@ -1352,17 +1370,19 @@
 
                 <!-- Call to Action -->
                 <div class="text-center mt-16">
-                    <h3 class="text-3xl font-bold text-white mb-6">Ready to Explore the Future of AI?</h3>
+                    <h3 class="text-3xl font-bold text-white mb-6">Ready to Explore?</h3>
                     <p class="text-lg text-gray-300 mb-8 max-w-3xl mx-auto">
-                        Explore the science or experience the network.
+                        Dive in.
                     </p>
                     <div class="flex flex-col md:flex-row gap-6 justify-center items-center">
                         <button onclick="window.location.href='neuroscience-explained.html'" 
+                                ontouchstart="this.onclick()"
                                 class="holographic-card px-8 py-4 rounded-full text-lg font-bold neon-text text-cyan-400 border-2 border-cyan-400 hover:scale-110 transition-all duration-500 flex items-center gap-3">
                             <span>🧠</span>
                             <span>Discover the Neuroscience</span>
                         </button>
                         <button onclick="document.querySelector('#mcp').scrollIntoView({behavior: 'smooth'})"
+                                ontouchstart="this.onclick()"
                                 class="holographic-card px-8 py-4 rounded-full text-lg font-bold neon-text text-purple-400 border-2 border-purple-400 hover:scale-110 transition-all duration-500 flex items-center gap-3">
                             <span>🧠</span>
                             <span>Experience the Neural Network</span>
@@ -1624,11 +1644,30 @@
             
             // Add touch effects for mobile
             matrixBtn.addEventListener('touchstart', async (e) => {
-                // Resume audio context first for mobile
-                await window.matrixSounds.resume();
+                console.log('🎵 Matrix button touchstart event');
+                
+                // Force initialize and resume audio context for mobile
+                if (window.matrixSounds && window.matrixSounds.audioContext) {
+                    console.log('🎵 AudioContext state:', window.matrixSounds.audioContext.state);
+                    try {
+                        await window.matrixSounds.resume();
+                        console.log('🎵 AudioContext resumed successfully');
+                    } catch (error) {
+                        console.error('🎵 Failed to resume AudioContext:', error);
+                    }
+                } else {
+                    console.warn('🎵 MatrixSounds or AudioContext not found');
+                }
+                
                 startMatrixFlicker();
-                // Play sound effect on touch
-                window.matrixSounds.play('hover'); // Or use a different sound if preferred
+                
+                // Try to play sound effect
+                try {
+                    window.matrixSounds.play('hover');
+                    console.log('🎵 Hover sound played');
+                } catch (error) {
+                    console.error('🎵 Failed to play sound:', error);
+                }
             }, { passive: true });
             
             matrixBtn.addEventListener('touchend', stopMatrixFlicker, { passive: true });
