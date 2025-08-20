@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>The Neuroscience Behind AI Quantum - Design Explained</title>
     
     <!-- SEO Meta Tags -->
@@ -104,17 +107,213 @@
             border: 2px solid rgba(0, 245, 255, 0.3);
             border-radius: 15px;
         }
+        
+        /* ===== MOBILE OPTIMIZATIONS FOR NEUROSCIENCE PAGE ===== */
+        
+        @media (max-width: 768px) {
+            .container {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+            }
+            
+            .text-6xl {
+                font-size: 2.5rem !important;
+                line-height: 1.1 !important;
+            }
+            
+            .text-4xl {
+                font-size: 1.75rem !important;
+            }
+            
+            .text-3xl {
+                font-size: 1.5rem !important;
+            }
+            
+            .text-2xl {
+                font-size: 1.25rem !important;
+            }
+            
+            .text-xl {
+                font-size: 1.125rem !important;
+            }
+            
+            .text-lg {
+                font-size: 1rem !important;
+            }
+            
+            .holographic-card {
+                margin: 1rem 0 !important;
+                padding: 1.5rem !important;
+            }
+            
+            .brain-section {
+                padding-left: 1rem !important;
+                margin: 1.5rem 0 !important;
+            }
+            
+            .scientific-diagram {
+                margin: 1rem 0 !important;
+                padding: 1rem !important;
+            }
+            
+            .grid {
+                grid-template-columns: 1fr !important;
+                gap: 1rem !important;
+            }
+            
+            .mb-20 {
+                margin-bottom: 3rem !important;
+            }
+            
+            .mb-16 {
+                margin-bottom: 2rem !important;
+            }
+            
+            .mb-8 {
+                margin-bottom: 1.5rem !important;
+            }
+            
+            .mb-6 {
+                margin-bottom: 1rem !important;
+            }
+            
+            .py-20 {
+                padding-top: 3rem !important;
+                padding-bottom: 3rem !important;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding-left: 0.5rem !important;
+                padding-right: 0.5rem !important;
+            }
+            
+            .text-6xl {
+                font-size: 2rem !important;
+            }
+            
+            .text-4xl {
+                font-size: 1.5rem !important;
+            }
+            
+            .text-3xl {
+                font-size: 1.25rem !important;
+            }
+            
+            .text-2xl {
+                font-size: 1.125rem !important;
+            }
+            
+            .text-xl {
+                font-size: 1rem !important;
+            }
+            
+            .holographic-card {
+                margin: 0.5rem 0 !important;
+                padding: 1rem !important;
+                border-radius: 0.75rem !important;
+            }
+            
+            .brain-section {
+                padding-left: 0.75rem !important;
+                margin: 1rem 0 !important;
+                border-left-width: 2px !important;
+            }
+            
+            .scientific-diagram {
+                margin: 0.5rem 0 !important;
+                padding: 0.75rem !important;
+            }
+            
+            .mb-20 {
+                margin-bottom: 2rem !important;
+            }
+            
+            .mb-16 {
+                margin-bottom: 1.5rem !important;
+            }
+            
+            .mb-8 {
+                margin-bottom: 1rem !important;
+            }
+            
+            .max-w-4xl,
+            .max-w-3xl {
+                max-width: 100% !important;
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+                padding-left: 0.5rem !important;
+                padding-right: 0.5rem !important;
+            }
+            
+            .quantum-gradient {
+                padding: 2rem !important;
+                border-radius: 1rem !important;
+            }
+        }
+        
+        /* Touch-friendly interactions */
+        @media (hover: none) and (pointer: coarse) {
+            button:hover,
+            a:hover {
+                transform: none !important;
+            }
+            
+            button:active,
+            a:active {
+                transform: scale(0.98) !important;
+                transition: transform 0.1s ease !important;
+            }
+        }
+        
+        /* Reduce animations on mobile for performance */
+        @media (max-width: 768px) {
+            .neon-text {
+                animation: none !important;
+                text-shadow: 0 0 10px currentColor !important;
+            }
+            
+            .holographic-card {
+                backdrop-filter: blur(8px) !important;
+            }
+            
+            .neural-connection::before {
+                animation-duration: 5s !important;
+            }
+        }
     </style>
 </head>
 <body class="text-white min-h-screen">
 
     <!-- Navigation Back -->
     <div class="fixed top-8 left-8 z-50">
-        <button onclick="window.location.href='/'" class="holographic-card px-6 py-3 rounded-full text-cyan-400 hover:scale-110 transition-all duration-300 flex items-center gap-2">
+        <button onclick="window.location.href='/'" class="holographic-card px-6 py-3 rounded-full text-cyan-400 hover:scale-110 transition-all duration-300 flex items-center gap-2 mobile-back-btn">
             <span>←</span>
-            <span>Back to AI Quantum</span>
+            <span class="hidden sm:inline">Back to AI Quantum</span>
+            <span class="sm:hidden">Back</span>
         </button>
     </div>
+    
+    <style>
+        .mobile-back-btn {
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            min-height: 44px;
+        }
+        
+        @media (max-width: 768px) {
+            .fixed {
+                top: 1rem !important;
+                left: 1rem !important;
+            }
+            
+            .mobile-back-btn {
+                font-size: 0.875rem;
+                padding: 0.75rem 1rem;
+                min-height: 48px;
+            }
+        }
+    </style>
 
     <!-- Main Content -->
     <div class="container mx-auto px-8 py-20">
