@@ -1,0 +1,1572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Quantum - Neural Integration Platform | Nitzan Bar-Ness</title>
+    
+    <!-- Meta Tags for SEO and Social -->
+    <meta name="description" content="Discover AI Quantum - a revolutionary neural integration platform showcasing advanced AI, quantum computing principles, and neuroscience-based design. Created by Nitzan Bar-Ness.">
+    <meta name="keywords" content="AI Quantum, Neural Integration, Neuroscience, AI Platform, Quantum Computing, Claude AI, ElevenLabs, Text-to-Speech, Nitzan Bar-Ness, AI Innovation">
+    <meta name="author" content="Nitzan Bar-Ness">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="AI Quantum - Revolutionary Neural Integration Platform">
+    <meta property="og:description" content="Experience the future of AI through neuroscience-based design and quantum computing principles. Every element mirrors actual brain architecture.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aiquantum.barnessn.com">
+    <meta property="og:site_name" content="AI Quantum by Nitzan Bar-Ness">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI Quantum - Neural Integration Platform">
+    <meta name="twitter:description" content="Revolutionary AI platform with neuroscience-based design. Every visual element represents actual brain processes.">
+    <meta name="twitter:creator" content="@NitzanBarNess">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./src/css/styles.css">
+    
+    <!-- External Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    
+    <style>
+        body { font-family: 'Orbitron', monospace; }
+        .quantum-bg {
+            background: radial-gradient(circle at 20% 50%, #8338ec 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, #3a86ff 0%, transparent 50%),
+                        radial-gradient(circle at 40% 80%, #ff006e 0%, transparent 50%),
+                        #000000;
+        }
+        
+        .orbital-element {
+            animation: orbit 20s linear infinite;
+        }
+        
+        @keyframes orbit {
+            0% { transform: rotate(0deg) translateX(200px) rotate(0deg); }
+            100% { transform: rotate(360deg) translateX(200px) rotate(-360deg); }
+        }
+        
+        @keyframes holographic {
+            0%, 100% { transform: perspective(1000px) rotateY(0deg); }
+            50% { transform: perspective(1000px) rotateY(10deg); }
+        }
+        
+        .holographic-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            animation: holographic 6s ease-in-out infinite;
+        }
+        
+        .neon-text {
+            text-shadow: 0 0 10px currentColor, 0 0 20px currentColor, 0 0 40px currentColor;
+        }
+        
+        .energy-field {
+            background: radial-gradient(circle at center, rgba(0, 255, 255, 0.3) 0%, transparent 70%);
+        }
+        
+        .data-particle {
+            position: absolute;
+            width: 4px;
+            height: 20px;
+            background: linear-gradient(to bottom, transparent, #00ffff, transparent);
+            animation: data-stream 8s linear infinite;
+        }
+        
+        @keyframes data-stream {
+            0% { transform: translateY(100vh) scale(0); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translateY(-100vh) scale(1); opacity: 0; }
+        }
+        
+        .cyberpunk-grid {
+            background-image: 
+                linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+        
+        /* Matrix Rain Effect */
+        .matrix-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 9999;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+        
+        .matrix-overlay.active {
+            opacity: 1;
+        }
+        
+        .matrix-rain {
+            position: absolute;
+            top: -100px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 14px;
+            color: #00ff00;
+            text-shadow: 0 0 10px #00ff00;
+            white-space: pre;
+            animation: matrix-fall linear infinite;
+            user-select: none;
+        }
+        
+        @keyframes matrix-fall {
+            0% { transform: translateY(-100vh); opacity: 1; }
+            100% { transform: translateY(100vh); opacity: 0; }
+        }
+        
+        .matrix-char {
+            display: block;
+            margin-bottom: 10px;
+            opacity: 0.8;
+        }
+        
+        .matrix-char.bright {
+            color: #ffffff;
+            text-shadow: 0 0 15px #00ff00, 0 0 25px #00ff00;
+        }
+        
+        /* Matrix Console */
+        .matrix-console {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.95);
+            border: 2px solid #00ff00;
+            border-radius: 10px;
+            padding: 30px;
+            font-family: 'JetBrains Mono', monospace;
+            color: #00ff00;
+            z-index: 10000;
+            opacity: 0;
+            scale: 0.8;
+            transition: all 0.5s ease;
+            box-shadow: 0 0 50px rgba(0, 255, 0, 0.3);
+        }
+        
+        .matrix-console.visible {
+            opacity: 1;
+            scale: 1;
+        }
+        
+        .matrix-typewriter {
+            border-right: 2px solid #00ff00;
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 50% { border-color: transparent; }
+            51%, 100% { border-color: #00ff00; }
+        }
+        
+        /* Quantum Realm Modal */
+        .quantum-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(138, 43, 226, 0.1) 0%, rgba(0, 0, 0, 0.95) 100%);
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.5s ease;
+            backdrop-filter: blur(20px);
+        }
+        
+        .quantum-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .quantum-container {
+            background: rgba(0, 0, 0, 0.9);
+            border: 2px solid #8a2be2;
+            border-radius: 20px;
+            padding: 30px;
+            max-width: 90vw;
+            max-height: 90vh;
+            width: 800px;
+            height: 600px;
+            box-shadow: 0 0 50px rgba(138, 43, 226, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .quantum-header {
+            text-align: center;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .quantum-playground {
+            width: 100%;
+            height: 400px;
+            border: 1px solid rgba(138, 43, 226, 0.3);
+            border-radius: 10px;
+            background: rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .quantum-controls {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .quantum-control {
+            background: rgba(138, 43, 226, 0.2);
+            border: 1px solid #8a2be2;
+            border-radius: 8px;
+            padding: 8px 15px;
+            color: #8a2be2;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .quantum-control:hover {
+            background: rgba(138, 43, 226, 0.4);
+            transform: scale(1.05);
+        }
+        
+        .quantum-control.active {
+            background: rgba(138, 43, 226, 0.6);
+            color: white;
+        }
+        
+        .quantum-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            color: #8a2be2;
+            font-size: 24px;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            z-index: 3;
+        }
+        
+        .quantum-close:hover {
+            background: rgba(138, 43, 226, 0.2);
+            transform: rotate(90deg);
+        }
+        
+        .quantum-particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: radial-gradient(circle, #8a2be2 0%, transparent 70%);
+            border-radius: 50%;
+            animation: quantum-float 3s ease-in-out infinite;
+        }
+        
+        @keyframes quantum-float {
+            0%, 100% { 
+                transform: translateY(0px) scale(1);
+                opacity: 0.6;
+            }
+            50% { 
+                transform: translateY(-20px) scale(1.2);
+                opacity: 1;
+            }
+        }
+        
+        .quantum-wave {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border: 2px solid rgba(138, 43, 226, 0.3);
+            border-radius: 50%;
+            animation: quantum-pulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes quantum-pulse {
+            0% { 
+                transform: scale(0.5);
+                opacity: 1;
+            }
+            100% { 
+                transform: scale(2);
+                opacity: 0;
+            }
+        }
+        
+        .quantum-signature {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10px;
+            color: rgba(138, 43, 226, 0.7);
+            background: rgba(0, 0, 0, 0.8);
+            padding: 5px 10px;
+            border-radius: 5px;
+            border: 1px solid rgba(138, 43, 226, 0.3);
+        }
+
+        /* Neural Docs Modal */
+        .neural-docs-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 9998;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.5s ease;
+            backdrop-filter: blur(20px);
+        }
+
+        .neural-docs-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .neural-docs-container {
+            background: rgba(0, 0, 0, 0.9);
+            border: 2px solid #7c3aed;
+            border-radius: 20px;
+            padding: 30px;
+            max-width: 900px;
+            width: 90%;
+            height: 700px;
+            box-shadow: 0 0 50px rgba(124, 58, 237, 0.5);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .neural-docs-header {
+            text-align: center;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .neural-docs-content {
+            flex: 1;
+            overflow-y: auto;
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(124, 58, 237, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            position: relative;
+        }
+
+        .neural-docs-nav {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .neural-nav-item {
+            background: rgba(124, 58, 237, 0.2);
+            border: 1px solid #7c3aed;
+            border-radius: 8px;
+            padding: 8px 16px;
+            color: #7c3aed;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .neural-nav-item:hover,
+        .neural-nav-item.active {
+            background: rgba(124, 58, 237, 0.4);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .neural-docs-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            color: #7c3aed;
+            font-size: 24px;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            z-index: 3;
+        }
+
+        .neural-docs-close:hover {
+            background: rgba(124, 58, 237, 0.2);
+            transform: rotate(90deg);
+        }
+
+        .neural-section {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .neural-section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .neural-code-block {
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid rgba(124, 58, 237, 0.3);
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px 0;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            color: #00ff88;
+            overflow-x: auto;
+        }
+
+        .neural-highlight {
+            color: #7c3aed;
+            font-weight: bold;
+        }
+
+        .neural-search {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid rgba(124, 58, 237, 0.5);
+            border-radius: 8px;
+            padding: 10px;
+            color: white;
+            font-family: 'JetBrains Mono', monospace;
+            margin-bottom: 15px;
+        }
+
+        .neural-search:focus {
+            outline: none;
+            border-color: #7c3aed;
+            box-shadow: 0 0 10px rgba(124, 58, 237, 0.3);
+        }
+
+        .neural-brain-animation {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 60px;
+            background: radial-gradient(circle, #7c3aed 30%, transparent 70%);
+            border-radius: 50%;
+            animation: neural-pulse 2s ease-in-out infinite;
+            z-index: 1;
+        }
+
+        @keyframes neural-pulse {
+            0%, 100% { transform: translateX(-50%) scale(1); opacity: 0.6; }
+            50% { transform: translateX(-50%) scale(1.2); opacity: 1; }
+        }
+    </style>
+</head>
+<body class="bg-black text-white overflow-x-hidden">
+    
+    <!-- Matrix Rain Overlay -->
+    <div id="matrix-overlay" class="matrix-overlay">
+        <div id="matrix-rain-container"></div>
+        <div id="matrix-console" class="matrix-console">
+            <div style="font-size: 18px; margin-bottom: 20px; color: #00ff00;">
+                > QUANTUM MATRIX INTERFACE
+            </div>
+            <div id="matrix-typewriter" class="matrix-typewriter" style="font-size: 14px; line-height: 1.6;">
+                Initializing neural pathways...
+            </div>
+        </div>
+    </div>
+    
+    <!-- Quantum Realm Modal -->
+    <div id="quantum-modal" class="quantum-modal">
+        <div class="quantum-container">
+            <button class="quantum-close" id="quantum-close">×</button>
+            
+            <div class="quantum-header">
+                <h2 style="font-size: 28px; color: #8a2be2; font-family: 'Orbitron', monospace; margin-bottom: 10px;">
+                    QUANTUM LABORATORY
+                </h2>
+                <p style="color: #666; font-size: 14px;">
+                    Manipulate quantum fields and observe particle interactions
+                </p>
+            </div>
+            
+            <div id="quantum-playground" class="quantum-playground">
+                <!-- Three.js quantum scene will be rendered here -->
+                <div id="quantum-signature" class="quantum-signature">
+                    QS: Loading...
+                </div>
+            </div>
+            
+            <div class="quantum-controls">
+                <button class="quantum-control" data-action="particles">
+                    🔵 Spawn Particles
+                </button>
+                <button class="quantum-control" data-action="waves">
+                    🌀 Quantum Waves  
+                </button>
+                <button class="quantum-control" data-action="field">
+                    ⚡ Field Generator
+                </button>
+                <button class="quantum-control" data-action="reset">
+                    🔄 Reset Field
+                </button>
+                <button class="quantum-control" data-action="save">
+                    💾 Save Signature
+                </button>
+                <button class="quantum-control" data-action="share">
+                    🔗 Share Portal
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Quantum Grid Background -->
+    <div class="fixed inset-0 cyberpunk-grid opacity-30 pointer-events-none"></div>
+    
+    <!-- Data Particles -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none">
+        <div class="data-particle" style="left: 10%; animation-delay: 0s;"></div>
+        <div class="data-particle" style="left: 25%; animation-delay: 2s;"></div>
+        <div class="data-particle" style="left: 40%; animation-delay: 4s;"></div>
+        <div class="data-particle" style="left: 55%; animation-delay: 6s;"></div>
+        <div class="data-particle" style="left: 70%; animation-delay: 1s;"></div>
+        <div class="data-particle" style="left: 85%; animation-delay: 3s;"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 p-6">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="text-2xl font-bold neon-text text-cyan-400">NITZAN BAR-NESS</div>
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#mcp" class="text-gray-300 hover:text-cyan-400 transition-colors">Protocol</a>
+                <a href="#claude-code" class="text-gray-300 hover:text-cyan-400 transition-colors">Code</a>
+                <a href="#elevenlabs" class="text-gray-300 hover:text-cyan-400 transition-colors">Audio</a>
+                <a href="#demo" class="text-gray-300 hover:text-cyan-400 transition-colors">Demo</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative min-h-screen flex items-center justify-center quantum-bg">
+        <!-- Orbital Elements -->
+        <div class="absolute inset-0 flex items-center justify-center">
+            <div class="relative w-96 h-96">
+                <div class="orbital-element absolute w-8 h-8 bg-cyan-400 rounded-full shadow-lg shadow-cyan-400/50"></div>
+                <div class="orbital-element absolute w-6 h-6 bg-purple-400 rounded-full shadow-lg shadow-purple-400/50" style="animation-delay: -5s;"></div>
+                <div class="orbital-element absolute w-4 h-4 bg-pink-400 rounded-full shadow-lg shadow-pink-400/50" style="animation-delay: -10s;"></div>
+            </div>
+        </div>
+        
+        <div class="relative z-10 text-center px-8 max-w-6xl mx-auto">
+            <div class="energy-field rounded-full w-96 h-96 mx-auto mb-12 flex items-center justify-center">
+                <h1 class="text-7xl font-black neon-text text-cyan-400 hero-title">
+                    AI<br/>
+                    <span class="text-purple-400 hero-title-highlight">QUANTUM</span>
+                </h1>
+            </div>
+            
+            <h2 class="text-3xl font-bold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400">
+                NEURAL SYNTHESIS PROTOCOL
+            </h2>
+            
+            <p class="text-xl text-gray-200 mb-12 max-w-3xl mx-auto leading-relaxed">
+                Experience the convergence of artificial intelligence, natural language, and synthetic speech in a unified quantum interface
+            </p>
+            
+            <button id="enter-matrix-btn" class="holographic-card px-16 py-6 rounded-full text-xl font-bold neon-text text-cyan-400 hover:scale-110 transition-all duration-500 border-2 border-cyan-400">
+                ENTER THE MATRIX
+            </button>
+        </div>
+    </section>
+
+    <!-- MCP Protocol Section -->
+    <section id="mcp" class="py-32 px-8 bg-black relative">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-6xl font-black text-center mb-20 neon-text text-purple-400">
+                NEURAL NETWORK
+            </h2>
+            
+            <div class="relative">
+                <!-- 3D Neural Network Visualization -->
+                <div id="neural-network-container" class="absolute inset-0 w-full h-96 z-0"></div>
+                
+                <!-- Connection Lines -->
+                <svg class="absolute inset-0 w-full h-full" style="z-index: 1;">
+                    <defs>
+                        <linearGradient id="connectionGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" style="stop-color:#00ffff;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#ff00ff;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <line x1="20%" y1="50%" x2="50%" y2="30%" stroke="url(#connectionGradient)" stroke-width="2" opacity="0.6"/>
+                    <line x1="20%" y1="50%" x2="50%" y2="70%" stroke="url(#connectionGradient)" stroke-width="2" opacity="0.6"/>
+                    <line x1="50%" y1="30%" x2="80%" y2="50%" stroke="url(#connectionGradient)" stroke-width="2" opacity="0.6"/>
+                    <line x1="50%" y1="70%" x2="80%" y2="50%" stroke="url(#connectionGradient)" stroke-width="2" opacity="0.6"/>
+                </svg>
+                
+                <div class="grid md:grid-cols-3 gap-16 relative z-10">
+                    <div class="holographic-card p-8 rounded-3xl text-center">
+                        <div class="w-24 h-24 mx-auto mb-6 rounded-full bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center neon-text text-3xl">
+                            🧠
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-cyan-400">CLAUDE CORE</h3>
+                        <div class="text-gray-300 space-y-2">
+                            <div>→ Natural Language Processing</div>
+                            <div>→ Code Generation Engine</div>
+                            <div>→ Reasoning Protocols</div>
+                        </div>
+                    </div>
+                    
+                    <div class="holographic-card p-8 rounded-3xl text-center">
+                        <div class="w-24 h-24 mx-auto mb-6 rounded-full bg-gradient-to-br from-purple-400 to-pink-600 flex items-center justify-center neon-text text-3xl">
+                            ⚡
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-purple-400">MCP BRIDGE</h3>
+                        <div class="text-gray-300 space-y-2">
+                            <div>→ Protocol Translation</div>
+                            <div>→ Service Orchestration</div>
+                            <div>→ Real-time Synchronization</div>
+                        </div>
+                    </div>
+                    
+                    <div class="holographic-card p-8 rounded-3xl text-center">
+                        <div class="w-24 h-24 mx-auto mb-6 rounded-full bg-gradient-to-br from-pink-400 to-red-600 flex items-center justify-center neon-text text-3xl">
+                            🎵
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-pink-400">VOICE ENGINE</h3>
+                        <div class="text-gray-300 space-y-2">
+                            <div>→ Neural Voice Synthesis</div>
+                            <div>→ Emotional Modulation</div>
+                            <div>→ Multi-language Support</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Claude Code Section -->
+    <section id="claude-code" class="py-32 px-8 bg-gradient-to-b from-black to-gray-900">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-5xl font-black text-center mb-16 neon-text text-cyan-400">
+                QUANTUM CONSOLE
+            </h2>
+            
+            <div class="holographic-card rounded-3xl p-12 border-2 border-cyan-400">
+                <div class="grid md:grid-cols-3 gap-8 mb-12">
+                    <div class="bg-black rounded-2xl p-6 border border-cyan-400">
+                        <div class="text-cyan-400 mb-2 font-bold">STATUS</div>
+                        <div class="text-green-400">ONLINE</div>
+                    </div>
+                    <div class="bg-black rounded-2xl p-6 border border-purple-400">
+                        <div class="text-purple-400 mb-2 font-bold">LATENCY</div>
+                        <div class="text-green-400">47ms</div>
+                    </div>
+                    <div class="bg-black rounded-2xl p-6 border border-pink-400">
+                        <div class="text-pink-400 mb-2 font-bold">LOAD</div>
+                        <div class="text-green-400">23%</div>
+                    </div>
+                </div>
+                
+                <!-- Terminal Interface -->
+                <div class="bg-black rounded-2xl p-8 border-2 border-cyan-400 font-mono">
+                    <div class="text-cyan-400 mb-4">QUANTUM_TERMINAL v3.14159</div>
+                    <div class="space-y-2 text-sm">
+                        <div class="text-green-400">$ mcp.init() --protocol=claude --service=elevenlabs</div>
+                        <div class="text-yellow-400 pl-4">⚡ Initializing quantum entanglement...</div>
+                        <div class="text-blue-400 pl-4">🔗 MCP bridge established</div>
+                        <div class="text-purple-400 pl-4">🎙️ Voice synthesis engine online</div>
+                        <div class="text-cyan-400 pl-4">✓ System ready for neural interface</div>
+                        <div class="text-green-400">$ synthesize("Hello, quantum world")</div>
+                        <div class="text-white pl-4">🔊 Generating audio stream...</div>
+                        <div class="text-green-400">$ <span class="animate-pulse">▊</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ElevenLabs Audio Section -->
+    <section id="elevenlabs" class="py-32 px-8 bg-black">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-5xl font-black text-center mb-16 neon-text text-purple-400">
+                AUDIO SYNTHESIS ENGINE
+            </h2>
+            
+            <div class="holographic-card rounded-3xl p-16 text-center">
+                <!-- 3D Waveform -->
+                <div class="relative h-64 mb-12 flex items-center justify-center">
+                    <!-- 3D Audio Visualizer Container -->
+                    <div id="audio-visualizer-container" class="absolute inset-0 w-full h-full z-0"></div>
+                    
+                    <div class="absolute inset-0 bg-gradient-to-r from-transparent via-cyan-400/20 to-transparent rounded-full"></div>
+                    
+                    <!-- Circular Waveform -->
+                    <div class="relative w-80 h-80 border-2 border-cyan-400 rounded-full flex items-center justify-center z-10">
+                        <div class="absolute inset-4 border border-purple-400 rounded-full"></div>
+                        <div class="absolute inset-8 border border-pink-400 rounded-full"></div>
+                        
+                        <!-- Canvas for Audio Visualization -->
+                        <canvas id="waveform-canvas" width="320" height="320" class="absolute inset-0 rounded-full"></canvas>
+                        <canvas id="spectrum-canvas" width="320" height="320" class="absolute inset-0 rounded-full"></canvas>
+                    </div>
+                </div>
+                
+                <h3 class="text-3xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400">
+                    NEURAL VOICE SYNTHESIS
+                </h3>
+                
+                <div class="grid md:grid-cols-4 gap-6 text-center">
+                    <div class="holographic-card p-4 rounded-xl">
+                        <div class="text-cyan-400 font-bold">FREQUENCY</div>
+                        <div class="text-2xl text-white">48kHz</div>
+                    </div>
+                    <div class="holographic-card p-4 rounded-xl">
+                        <div class="text-purple-400 font-bold">PRECISION</div>
+                        <div class="text-2xl text-white">32-bit</div>
+                    </div>
+                    <div class="holographic-card p-4 rounded-xl">
+                        <div class="text-pink-400 font-bold">LATENCY</div>
+                        <div class="text-2xl text-white">&lt; 50ms</div>
+                    </div>
+                    <div class="holographic-card p-4 rounded-xl">
+                        <div class="text-yellow-400 font-bold">QUALITY</div>
+                        <div class="text-2xl text-white">Ultra</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Demo Section -->
+    <section id="demo" class="py-32 px-8 bg-gradient-to-t from-black to-gray-900">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-5xl font-black text-center mb-16 neon-text text-pink-400">
+                NEURAL INTERFACE
+            </h2>
+            
+            <div class="holographic-card rounded-3xl p-12 border-2 border-pink-400">
+                <div class="mb-8">
+                    <div class="flex justify-between items-center mb-4">
+                        <label class="block text-2xl font-bold text-cyan-400">NEURAL INPUT:</label>
+                        <div class="character-counter text-sm text-gray-400">0/500</div>
+                    </div>
+                    <textarea 
+                        id="demo-text-input"
+                        class="w-full h-32 bg-black border-2 border-cyan-400 rounded-xl p-6 text-cyan-400 font-mono text-lg focus:outline-none focus:border-purple-400 transition-colors"
+                        placeholder=">>> Enter your thoughts into the quantum matrix..." 
+                        maxlength="500">Hello from the quantum realm! This is Claude MCP in action.</textarea>
+                    <div class="audio-info text-xs text-gray-500 mt-2"></div>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-8 mb-12">
+                    <div>
+                        <label class="block text-xl font-bold mb-4 text-purple-400">VOICE SYNTHESIS:</label>
+                        <div class="holographic-card rounded-xl p-4">
+                            <div class="text-purple-400 font-mono text-lg mb-2">RACHEL_NEURAL_v3.0</div>
+                            <div class="text-xs text-gray-500">Professional Female Voice • Multi-language • Emotional Intelligence</div>
+                            <div class="text-xs text-cyan-400 mt-1">🎵 ElevenLabs Synthesis Engine Active</div>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-xl font-bold mb-4 text-pink-400">SYNTHESIS_RATE:</label>
+                        <div class="holographic-card rounded-xl p-4">
+                            <input type="range" id="speed-slider" class="w-full h-2 bg-pink-400 rounded-full" min="0.5" max="2" step="0.1" value="1">
+                            <div class="text-center text-pink-400 mt-2 font-bold" id="speed-display">1.0x QUANTUM</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <button id="generate-speech-btn" class="holographic-card px-16 py-6 rounded-full text-2xl font-black neon-text text-cyan-400 border-2 border-cyan-400 hover:scale-110 transition-all duration-500">
+                        🚀 INITIATE SYNTHESIS
+                    </button>
+                </div>
+                
+                <!-- Loading and Result Display -->
+                <div id="synthesis-status" class="mt-8 text-center" style="display: none;">
+                    <div class="text-yellow-400 mb-4">⚡ Quantum synthesis in progress...</div>
+                    <div class="w-full h-2 bg-gray-700 rounded-full">
+                        <div id="synthesis-progress" class="h-full bg-gradient-to-r from-cyan-400 to-purple-400 rounded-full transition-all duration-300" style="width: 0%"></div>
+                    </div>
+                </div>
+                
+                <div id="synthesis-result" class="mt-8" style="display: none;">
+                    <div class="holographic-card p-6 rounded-xl">
+                        <div class="text-green-400 mb-4 font-bold">✓ SYNTHESIS COMPLETE</div>
+                        <audio id="generated-audio" class="w-full mb-4" style="display: none;">
+                            Your browser does not support the audio element.
+                        </audio>
+                        
+                        <!-- Custom audio controls -->
+                        <div class="custom-audio-controls flex items-center justify-center gap-4 mb-4">
+                            <button id="demo-play-pause" class="w-16 h-16 rounded-full bg-gradient-to-r from-cyan-400 to-purple-500 flex items-center justify-center text-white font-bold text-2xl hover:scale-110 transition-all duration-300 shadow-lg">
+                                ▶
+                            </button>
+                            <div class="flex-1">
+                                <div class="text-cyan-400 text-sm font-mono mb-1">Demo Audio</div>
+                                <div class="w-full h-2 bg-gray-800/80 rounded-full">
+                                    <div id="demo-progress" class="h-full bg-gradient-to-r from-cyan-400 to-purple-400 rounded-full transition-all" style="width: 0%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <button id="download-audio-btn" class="bg-gradient-to-r from-green-400 to-blue-400 px-6 py-2 rounded-full text-black font-bold hover:scale-105 transition-transform">
+                            📥 DOWNLOAD QUANTUM AUDIO
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Neural Docs Modal -->
+    <div id="neural-docs-modal" class="neural-docs-modal">
+        <div class="neural-docs-container">
+            <button class="neural-docs-close" id="neural-docs-close">×</button>
+            <div class="neural-brain-animation"></div>
+            
+            <div class="neural-docs-header">
+                <h2 style="font-size: 28px; color: #7c3aed; font-family: 'Orbitron', monospace; margin-bottom: 10px;">
+                    🧠 NEURAL DOCUMENTATION
+                </h2>
+                <p style="font-size: 14px; color: rgba(124, 58, 237, 0.8); font-family: 'JetBrains Mono', monospace;">
+                    Interactive AI Knowledge Base
+                </p>
+            </div>
+            
+            <input type="text" id="neural-search" class="neural-search" placeholder="🔍 Search neural pathways...">
+            
+            <div class="neural-docs-nav">
+                <button class="neural-nav-item active" data-section="overview">🎯 Overview</button>
+                <button class="neural-nav-item" data-section="mcp">🔗 MCP Protocol</button>
+                <button class="neural-nav-item" data-section="claude">🤖 Claude Code</button>
+                <button class="neural-nav-item" data-section="elevenlabs">🎵 ElevenLabs</button>
+                <button class="neural-nav-item" data-section="quantum">⚛️ Quantum Systems</button>
+                <button class="neural-nav-item" data-section="matrix">💊 Matrix Effects</button>
+                <button class="neural-nav-item" data-section="api">📡 API Reference</button>
+            </div>
+            
+            <div class="neural-docs-content" id="neural-docs-content">
+                <!-- Content will be populated dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Call to Action -->
+    <section class="py-32 px-8 quantum-bg">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="energy-field rounded-full w-64 h-64 mx-auto mb-12 flex items-center justify-center">
+                <h2 class="text-4xl font-black neon-text text-white">
+                    QUANTUM<br/>GATEWAY
+                </h2>
+            </div>
+            
+            <p class="text-2xl text-white mb-12 font-bold">
+                Step into the future of AI-human collaboration
+            </p>
+            
+            <div class="flex flex-col md:flex-row gap-8 justify-center">
+                <button id="enter-quantum-btn" class="holographic-card px-12 py-6 rounded-full text-xl font-bold neon-text text-cyan-400 border-2 border-cyan-400 hover:scale-110 transition-all duration-500">
+                    ENTER QUANTUM REALM
+                </button>
+                <button id="access-neural-docs-btn" class="holographic-card px-12 py-6 rounded-full text-xl font-bold neon-text text-purple-400 border-2 border-purple-400 hover:scale-110 transition-all duration-500">
+                    ACCESS NEURAL DOCS
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Digital Neuroscience Section -->
+    <section id="neuroscience" class="py-32 px-8 bg-gradient-to-b from-black via-purple-900/20 to-black relative overflow-hidden">
+        <!-- Background Neural Network Visualization -->
+        <div class="absolute inset-0 opacity-15">
+            <div id="neural-understanding-container" class="w-full h-full"></div>
+        </div>
+        
+        <!-- Floating Particles -->
+        <div class="absolute inset-0 pointer-events-none">
+            <div class="data-particle" style="left: 10%; animation-delay: 0s;"></div>
+            <div class="data-particle" style="left: 25%; animation-delay: 2s;"></div>
+            <div class="data-particle" style="left: 40%; animation-delay: 4s;"></div>
+            <div class="data-particle" style="left: 55%; animation-delay: 1s;"></div>
+            <div class="data-particle" style="left: 70%; animation-delay: 3s;"></div>
+            <div class="data-particle" style="left: 85%; animation-delay: 5s;"></div>
+        </div>
+        
+        <div class="max-w-6xl mx-auto relative z-10">
+            <div class="text-center">
+                <!-- Main Title -->
+                <div class="mb-20">
+                    <h2 class="text-6xl font-black text-center mb-16 neon-text" style="background: linear-gradient(45deg, #00ffff, #8a2be2, #ff1493); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+                        🧠 DIGITAL NEUROSCIENCE
+                    </h2>
+                    <p class="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+                        <span class="text-white font-bold">This isn't connecting separate AI tools — this is building an artificial brain that thinks alongside your human brain.</span><br/><br/>
+                        🧑 <span class="text-yellow-400 font-bold">You = Creative Consciousness</span> (imagination, intent, emotion)<br/>
+                        🧠 <span class="text-cyan-400 font-bold">Claude = Prefrontal Cortex</span> (complex reasoning)<br/>
+                        🔗 <span class="text-green-400 font-bold">MCP = Corpus Callosum</span> (neural pathways)<br/>
+                        🎤 <span class="text-purple-400 font-bold">ElevenLabs = Motor Speech Areas</span> (voice generation)<br/>
+                        👁️ <span class="text-pink-400 font-bold">Three.js = Visual Cortex</span> (spatial processing)<br/><br/>
+                        <span class="text-white font-bold">Human creativity + AI capabilities = </span><span class="text-cyan-400 font-bold">Augmented intelligence beyond what either could achieve alone.</span>
+                    </p>
+                </div>
+
+                <!-- Core Insight Panel -->
+                <div class="holographic-card p-12 rounded-3xl mb-20 border-2 border-purple-500/30">
+                    <div class="flex items-center justify-center mb-8">
+                        <div class="w-20 h-20 rounded-full bg-gradient-to-r from-cyan-400 to-purple-500 flex items-center justify-center text-3xl font-bold">
+                            🚀
+                        </div>
+                    </div>
+                    
+                    <h3 class="text-4xl font-bold text-white mb-6">
+                        From Separate Tools to Unified Intelligence
+                    </h3>
+                    <p class="text-lg text-gray-300 mb-8 max-w-4xl mx-auto">
+                        <span class="text-white font-bold">Watch human-AI neural synchronization in action:</span> 
+                        Your creative thought → Claude processes → ElevenLabs speaks → Three.js visualizes → you see, hear, and think new thoughts → 
+                        <span class="text-cyan-400">continuous cognitive loop</span> between human imagination and artificial intelligence.
+                        <br/><br/><span class="text-yellow-400 font-bold">This is the future of human-AI collaboration.</span>
+                    </p>
+                    
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="p-6 rounded-2xl bg-gradient-to-br from-cyan-500/20 to-blue-600/20 border border-cyan-500/30">
+                            <div class="text-3xl mb-4">🧠</div>
+                            <h4 class="text-xl font-bold text-cyan-400 mb-3">Claude Code</h4>
+                            <p class="text-gray-300">Cognitive Cortex</p>
+                            <p class="text-sm text-gray-400 mt-2">Handles complex reasoning, context understanding, and strategic thinking</p>
+                        </div>
+                        
+                        <div class="p-6 rounded-2xl bg-gradient-to-br from-purple-500/20 to-pink-600/20 border border-purple-500/30">
+                            <div class="text-3xl mb-4">🎵</div>
+                            <h4 class="text-xl font-bold text-purple-400 mb-3">ElevenLabs</h4>
+                            <p class="text-gray-300">Speech Production Center</p>
+                            <p class="text-sm text-gray-400 mt-2">Transforms text into expressive speech with emotional depth and timing</p>
+                        </div>
+                        
+                        <div class="p-6 rounded-2xl bg-gradient-to-br from-pink-500/20 to-orange-600/20 border border-pink-500/30">
+                            <div class="text-3xl mb-4">🌐</div>
+                            <h4 class="text-xl font-bold text-pink-400 mb-3">Three.js</h4>
+                            <p class="text-gray-300">Visual Processing Cortex</p>
+                            <p class="text-sm text-gray-400 mt-2">Creates immersive 3D environments that respond to audio and interaction</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Scientific Principles Grid -->
+                <div class="grid md:grid-cols-2 gap-12 mb-20">
+                    <!-- Quantum Consciousness -->
+                    <div class="holographic-card p-8 rounded-3xl border border-cyan-500/30">
+                        <div class="text-center mb-6">
+                            <div class="w-16 h-16 mx-auto rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 flex items-center justify-center text-2xl mb-4">⚛️</div>
+                            <h3 class="text-2xl font-bold text-cyan-400">Quantum-Inspired Intelligence</h3>
+                        </div>
+                        <div class="space-y-4">
+                            <div>
+                                <span class="font-bold text-white">Multiple Possibilities →</span>
+                                <span class="text-gray-300"> Like quantum states, the system explores several response paths before settling on the best one</span>
+                            </div>
+                            <div>
+                                <span class="font-bold text-white">Instant Synchronization →</span>
+                                <span class="text-gray-300"> When audio changes, visuals adapt immediately — no delays or disconnects</span>
+                            </div>
+                            <div>
+                                <span class="font-bold text-white">Coherent Experience →</span>
+                                <span class="text-gray-300"> Everything feels like one unified intelligence, not separate tools</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Neural Network Architecture -->
+                    <div class="holographic-card p-8 rounded-3xl border border-purple-500/30">
+                        <div class="text-center mb-6">
+                            <div class="w-16 h-16 mx-auto rounded-full bg-gradient-to-r from-purple-400 to-pink-500 flex items-center justify-center text-2xl mb-4">🧬</div>
+                            <h3 class="text-2xl font-bold text-purple-400">Distributed Neural Architecture</h3>
+                        </div>
+                        <div class="space-y-4">
+                            <div>
+                                <span class="font-bold text-white">Neural Pathways →</span>
+                                <span class="text-gray-300"> MCP acts like neural connections, letting AI systems share thoughts and context</span>
+                            </div>
+                            <div>
+                                <span class="font-bold text-white">Information Flow →</span>
+                                <span class="text-gray-300"> Data moves between systems as naturally as signals between brain regions</span>
+                            </div>
+                            <div>
+                                <span class="font-bold text-white">Distributed Intelligence →</span>
+                                <span class="text-gray-300"> No single component controls the others — they coordinate organically</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Performance Metrics -->
+                <div class="holographic-card p-12 rounded-3xl border border-pink-500/30 mb-20">
+                    <h3 class="text-3xl font-bold text-pink-400 mb-4 text-center">Performance Characteristics</h3>
+                    <p class="text-gray-300 text-center mb-8 max-w-3xl mx-auto">
+                        Here's what this integrated approach achieves compared to traditional separate-tool AI workflows. Each metric reflects real capabilities, not marketing promises.
+                    </p>
+                    
+                    <div class="grid md:grid-cols-4 gap-6">
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-cyan-400 mb-2">&lt;100ms</div>
+                            <div class="text-sm text-gray-300">Interface Response</div>
+                            <div class="text-xs text-gray-500">Smooth interactions without noticeable delays</div>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-purple-400 mb-2">5+</div>
+                            <div class="text-sm text-gray-300">Concurrent Systems</div>
+                            <div class="text-xs text-gray-500">Claude, ElevenLabs, Three.js, Web Audio, and MCP</div>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-pink-400 mb-2">📊</div>
+                            <div class="text-sm text-gray-300">Context Persistence</div>
+                            <div class="text-xs text-gray-500">Remembers settings and preferences during your session</div>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-yellow-400 mb-2">🔄</div>
+                            <div class="text-sm text-gray-300">Real-time Adaptation</div>
+                            <div class="text-xs text-gray-500">Adjusts audio and visuals based on your interactions</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Deep Insight Quote -->
+                <div class="relative mb-20">
+                    <div class="absolute inset-0 bg-gradient-to-r from-cyan-400/20 via-purple-500/20 to-pink-400/20 blur-3xl rounded-full"></div>
+                    <div class="relative holographic-card p-16 rounded-3xl border-2 border-purple-500/40">
+                        <div class="text-2xl md:text-3xl font-bold text-white leading-relaxed mb-6 text-center">
+                            <span class="text-white">This represents a fundamental breakthrough in AI.</span><br/><br/>
+                            <span class="text-cyan-400">We cracked the code.</span><br/><br/>
+                            Instead of building AI tools, <span class="text-purple-400">we built an AI brain</span> that works 
+                            <span class="text-pink-400">directly with human cognition</span>.<br/><br/>
+                            Each component acts like a specialized brain region:
+                            <br/>reasoning, speech, vision, coordination — 
+                            all synchronized not just with each other, but <span class="text-yellow-400">with your thinking process</span>.<br/><br/>
+                            <span class="text-white">This is what happens when </span><span class="text-cyan-400">human creativity</span><span class="text-white"> meets </span><span class="text-purple-400">artificial intelligence</span><span class="text-white"> in </span><span class="text-pink-400">perfect cognitive harmony</span><span class="text-white">.</span>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-12 h-1 bg-gradient-to-r from-cyan-400 to-purple-500 mx-auto mb-4"></div>
+                            <div class="text-lg text-gray-400">A New Paradigm in AI Architecture</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Call to Action -->
+                <div class="text-center mt-16">
+                    <h3 class="text-3xl font-bold text-white mb-6">Ready to Explore the Future of AI?</h3>
+                    <p class="text-lg text-gray-300 mb-8 max-w-3xl mx-auto">
+                        Dive deeper into the science behind this cognitive breakthrough or experience the neural network in action.
+                    </p>
+                    <div class="flex flex-col md:flex-row gap-6 justify-center items-center">
+                        <button onclick="window.open('neuroscience-explained.html', '_blank')" 
+                                class="holographic-card px-8 py-4 rounded-full text-lg font-bold neon-text text-cyan-400 border-2 border-cyan-400 hover:scale-110 transition-all duration-500 flex items-center gap-3">
+                            <span>🧠</span>
+                            <span>Discover the Neuroscience</span>
+                        </button>
+                        <button onclick="document.querySelector('#mcp').scrollIntoView({behavior: 'smooth'})"
+                                class="holographic-card px-8 py-4 rounded-full text-lg font-bold neon-text text-purple-400 border-2 border-purple-400 hover:scale-110 transition-all duration-500 flex items-center gap-3">
+                            <span>🧠</span>
+                            <span>Experience the Neural Network</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JavaScript -->
+    <script type="module">
+        import AudioManager from './src/js/audio.js';
+        import ThreeSceneManager from './src/js/three-scene.js';
+        import ElevenLabsDemo from './src/js/elevenlabs-demo.js';
+        import PerformanceOptimizer from './src/js/performance-optimizer.js';
+        import { MatrixEffect, MatrixSounds, KonamiCode } from './src/js/matrix-effect.js';
+        import QuantumRealm from './src/js/quantum-realm.js';
+        import NeuralDocs from './src/js/neural-docs.js';
+        
+        // Initialize when DOM is ready
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize audio manager
+            window.audioManager = new AudioManager({
+                visualizations: true,
+                scrollSync: true,
+                autoPlay: false
+            });
+            
+            // Initialize Three.js scenes
+            window.threeSceneManager = new ThreeSceneManager();
+            
+            // Initialize ElevenLabs demo
+            window.elevenLabsDemo = new ElevenLabsDemo();
+            
+            // Initialize performance optimizer
+            window.performanceOptimizer = new PerformanceOptimizer();
+            
+            // Initialize Matrix effects
+            window.matrixEffect = new MatrixEffect();
+            window.matrixSounds = new MatrixSounds();
+            
+            // Initialize Quantum Realm
+            window.quantumRealm = new QuantumRealm();
+            
+            // Initialize Neural Documentation
+            window.neuralDocs = new NeuralDocs();
+            
+            // Setup Matrix button functionality
+            setupMatrixButton();
+            
+            // Setup Quantum Realm button functionality
+            setupQuantumButton();
+            
+            // Setup Neural Docs button functionality
+            setupNeuralDocsButton();
+            
+            // Setup Konami code Easter egg
+            new KonamiCode(() => {
+                console.log('🎉 Konami Code activated! Special Matrix mode!');
+                window.matrixSounds.play('success');
+                // Special Matrix mode - longer duration and more effects
+                window.matrixEffect.startEffect();
+                setTimeout(() => {
+                    document.body.style.filter = 'hue-rotate(120deg)';
+                    setTimeout(() => {
+                        document.body.style.filter = '';
+                    }, 3000);
+                }, 2000);
+            });
+            
+            // Setup demo functionality
+            setupDemo();
+            
+            // Setup GSAP animations
+            setupAnimations();
+        });
+        
+        function setupDemo() {
+            const generateBtn = document.getElementById('generate-speech-btn');
+            const textInput = document.getElementById('demo-text-input');
+            const speedSlider = document.getElementById('speed-slider');
+            const speedDisplay = document.getElementById('speed-display');
+            const synthesisStatus = document.getElementById('synthesis-status');
+            const synthesisResult = document.getElementById('synthesis-result');
+            
+            // Update speed display
+            speedSlider.addEventListener('input', (e) => {
+                speedDisplay.textContent = `${e.target.value}x QUANTUM`;
+            });
+            
+            // Generate speech (simulated for demo)
+            generateBtn.addEventListener('click', async () => {
+                const text = textInput.value.trim();
+                if (!text) return;
+                
+                // Show loading
+                synthesisStatus.style.display = 'block';
+                synthesisResult.style.display = 'none';
+                generateBtn.disabled = true;
+                
+                // Simulate progress
+                const progressBar = document.getElementById('synthesis-progress');
+                let progress = 0;
+                const interval = setInterval(() => {
+                    progress += Math.random() * 20;
+                    if (progress >= 100) {
+                        progress = 100;
+                        clearInterval(interval);
+                        showResult();
+                    }
+                    progressBar.style.width = `${progress}%`;
+                }, 200);
+            });
+            
+            function showResult() {
+                synthesisStatus.style.display = 'none';
+                synthesisResult.style.display = 'block';
+                generateBtn.disabled = false;
+                
+                // Use existing audio file as demo
+                const audio = document.getElementById('generated-audio');
+                audio.src = './src/assets/audio/claude_mcp_explanation_english.mp3';
+            }
+        }
+        
+        // Matrix Button Setup Function
+        function setupMatrixButton() {
+            const matrixBtn = document.getElementById('enter-matrix-btn');
+            
+            if (!matrixBtn) {
+                console.warn('Matrix button not found');
+                return;
+            }
+            
+            let matrixFlickerInterval = null;
+            
+            // Add click event listener
+            matrixBtn.addEventListener('click', async (e) => {
+                e.preventDefault();
+                
+                // Resume audio context (required for sound effects)
+                await window.matrixSounds.resume();
+                
+                // Play entrance sound
+                window.matrixSounds.play('entrance');
+                
+                // Disable button temporarily
+                matrixBtn.style.pointerEvents = 'none';
+                
+                // Start Matrix effect
+                window.matrixEffect.startEffect();
+                
+                // Re-enable button after effect
+                setTimeout(() => {
+                    matrixBtn.style.pointerEvents = 'auto';
+                }, 8000);
+            });
+            
+            // Add special hover effects
+            matrixBtn.addEventListener('mouseenter', () => {
+                // Clear any existing flicker animation
+                if (matrixFlickerInterval) {
+                    clearInterval(matrixFlickerInterval);
+                    matrixFlickerInterval = null;
+                }
+                
+                // Add matrix-style text flicker
+                let flickerCount = 0;
+                const originalText = matrixBtn.textContent;
+                const matrixChars = 'ΞΩΨΦΧΥΤΣΡΠΟΞΝΜΛΚΙΘΗΖΕΔΓΒΑ';
+                
+                matrixFlickerInterval = setInterval(() => {
+                    if (flickerCount < 3) {
+                        matrixBtn.textContent = matrixChars.substring(0, originalText.length);
+                        setTimeout(() => {
+                            if (matrixBtn.textContent !== originalText) {
+                                matrixBtn.textContent = originalText;
+                            }
+                        }, 100);
+                        flickerCount++;
+                    } else {
+                        clearInterval(matrixFlickerInterval);
+                        matrixFlickerInterval = null;
+                        // Ensure text is restored
+                        matrixBtn.textContent = originalText;
+                    }
+                }, 200);
+            });
+            
+            // Add mouse leave to ensure cleanup
+            matrixBtn.addEventListener('mouseleave', () => {
+                if (matrixFlickerInterval) {
+                    clearInterval(matrixFlickerInterval);
+                    matrixFlickerInterval = null;
+                }
+                // Force restore original text
+                matrixBtn.textContent = 'ENTER THE MATRIX';
+            });
+            
+            // Window resize handler for Matrix rain and Quantum Realm
+            window.addEventListener('resize', () => {
+                window.matrixEffect.handleResize();
+                if (window.quantumRealm) {
+                    window.quantumRealm.handleResize();
+                }
+            });
+        }
+        
+        // Quantum Realm Button Setup Function
+        function setupQuantumButton() {
+            const quantumBtn = document.getElementById('enter-quantum-btn');
+            
+            if (!quantumBtn) {
+                console.warn('Quantum Realm button not found');
+                return;
+            }
+            
+            let quantumFlickerInterval = null;
+            
+            // Add click event listener
+            quantumBtn.addEventListener('click', async (e) => {
+                e.preventDefault();
+                
+                console.log('🌀 Quantum Realm button clicked!');
+                
+                // Disable button temporarily
+                quantumBtn.style.pointerEvents = 'none';
+                
+                // Open the Quantum Realm
+                await window.quantumRealm.openRealm();
+                
+                // Re-enable button after opening
+                setTimeout(() => {
+                    quantumBtn.style.pointerEvents = 'auto';
+                }, 1000);
+            });
+            
+            // Add special hover effects for Quantum button
+            quantumBtn.addEventListener('mouseenter', () => {
+                // Clear any existing flicker animation
+                if (quantumFlickerInterval) {
+                    clearInterval(quantumFlickerInterval);
+                    quantumFlickerInterval = null;
+                }
+                
+                // Add quantum-style text flicker with Greek letters
+                let flickerCount = 0;
+                const originalText = quantumBtn.textContent;
+                const quantumChars = 'ΨΦΧΥΤΣΡΠΟΞΝΜΛΚΙΘΗΖΕΔΓΒΑ⧨⧩⧪⧫⧬⧭';
+                
+                quantumFlickerInterval = setInterval(() => {
+                    if (flickerCount < 4) {
+                        quantumBtn.textContent = quantumChars.substring(0, originalText.length);
+                        setTimeout(() => {
+                            if (quantumBtn.textContent !== originalText) {
+                                quantumBtn.textContent = originalText;
+                            }
+                        }, 120);
+                        flickerCount++;
+                    } else {
+                        clearInterval(quantumFlickerInterval);
+                        quantumFlickerInterval = null;
+                        // Ensure text is restored
+                        quantumBtn.textContent = originalText;
+                    }
+                }, 250);
+            });
+            
+            // Add mouse leave to ensure cleanup
+            quantumBtn.addEventListener('mouseleave', () => {
+                if (quantumFlickerInterval) {
+                    clearInterval(quantumFlickerInterval);
+                    quantumFlickerInterval = null;
+                }
+                // Force restore original text
+                quantumBtn.textContent = 'ENTER QUANTUM REALM';
+            });
+        }
+        
+        // Neural Docs Button Setup Function
+        function setupNeuralDocsButton() {
+            const neuralBtn = document.getElementById('access-neural-docs-btn');
+            
+            if (!neuralBtn) {
+                console.warn('Neural Docs button not found');
+                return;
+            }
+            
+            let neuralFlickerInterval = null;
+            
+            // Add click event listener
+            neuralBtn.addEventListener('click', async (e) => {
+                e.preventDefault();
+                
+                console.log('🧠 Neural Docs button clicked!');
+                
+                // Disable button temporarily
+                neuralBtn.style.pointerEvents = 'none';
+                
+                // Open the Neural Documentation
+                await window.neuralDocs.openDocs();
+                
+                // Re-enable button after opening
+                setTimeout(() => {
+                    neuralBtn.style.pointerEvents = 'auto';
+                }, 1000);
+            });
+            
+            // Add special hover effects for Neural Docs button
+            neuralBtn.addEventListener('mouseenter', () => {
+                // Clear any existing flicker animation
+                if (neuralFlickerInterval) {
+                    clearInterval(neuralFlickerInterval);
+                    neuralFlickerInterval = null;
+                }
+                
+                // Add neural-style text flicker with tech symbols
+                let flickerCount = 0;
+                const originalText = neuralBtn.textContent;
+                const neuralChars = '🧠🔗⚡🎯📡💻🎵⚛️💊🌐∞◈◇◉◎';
+                
+                neuralFlickerInterval = setInterval(() => {
+                    if (flickerCount < 3) {
+                        // Replace some letters with neural symbols
+                        let flickeredText = originalText.split('').map((char, i) => {
+                            if (Math.random() < 0.3 && char !== ' ') {
+                                return neuralChars[Math.floor(Math.random() * neuralChars.length)];
+                            }
+                            return char;
+                        }).join('');
+                        
+                        neuralBtn.textContent = flickeredText;
+                        setTimeout(() => {
+                            if (neuralBtn.textContent !== originalText) {
+                                neuralBtn.textContent = originalText;
+                            }
+                        }, 100);
+                        flickerCount++;
+                    } else {
+                        clearInterval(neuralFlickerInterval);
+                        neuralFlickerInterval = null;
+                        // Ensure text is restored
+                        neuralBtn.textContent = originalText;
+                    }
+                }, 200);
+            });
+            
+            // Add mouse leave to ensure cleanup
+            neuralBtn.addEventListener('mouseleave', () => {
+                if (neuralFlickerInterval) {
+                    clearInterval(neuralFlickerInterval);
+                    neuralFlickerInterval = null;
+                }
+                // Force restore original text
+                neuralBtn.textContent = 'ACCESS NEURAL DOCS';
+            });
+        }
+        
+        function setupAnimations() {
+            // GSAP ScrollTrigger animations
+            gsap.registerPlugin(ScrollTrigger);
+            
+            // Hero title animation
+            gsap.fromTo('.hero-title', 
+                { scale: 0.5, opacity: 0, rotationY: 90 },
+                { scale: 1, opacity: 1, rotationY: 0, duration: 2, ease: 'back.out(1.7)' }
+            );
+            
+            // Section reveals
+            gsap.utils.toArray('section').forEach((section, i) => {
+                gsap.fromTo(section.children, 
+                    { y: 100, opacity: 0 },
+                    {
+                        y: 0,
+                        opacity: 1,
+                        duration: 1,
+                        stagger: 0.2,
+                        ease: 'power2.out',
+                        scrollTrigger: {
+                            trigger: section,
+                            start: 'top 80%',
+                            end: 'bottom 20%',
+                            toggleActions: 'play none none reverse'
+                        }
+                    }
+                );
+            });
+            
+            // Holographic cards hover effect
+            gsap.utils.toArray('.holographic-card').forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    gsap.to(card, { scale: 1.05, duration: 0.3, ease: 'power2.out' });
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    gsap.to(card, { scale: 1, duration: 0.3, ease: 'power2.out' });
+                });
+            });
+            
+            // Neon text pulsing
+            gsap.to('.neon-text', {
+                textShadow: '0 0 20px currentColor, 0 0 40px currentColor, 0 0 60px currentColor',
+                duration: 2,
+                repeat: -1,
+                yoyo: true,
+                ease: 'power2.inOut'
+            });
+        }
+    </script>
+
+    <!-- WhatsApp Contact Section -->
+    <div class="py-20 text-center relative">
+        <div class="absolute inset-0 bg-gradient-to-r from-transparent via-cyan-500/10 to-transparent"></div>
+        
+        <div class="relative z-10 max-w-4xl mx-auto px-8">
+            <h2 class="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-cyan-400 mb-6">
+                💬 Let's Connect
+            </h2>
+            <p class="text-xl text-gray-300 mb-8">
+                Want to discuss AI, quantum computing, or innovative projects? Let's chat!
+            </p>
+            
+            <!-- WhatsApp Button -->
+            <a href="https://wa.me/972546262108?text=היי%20ניצן" 
+               target="_blank"
+               class="inline-flex items-center gap-4 holographic-card px-8 py-4 rounded-full text-lg font-bold text-green-400 border-2 border-green-400 hover:scale-110 hover:shadow-[0_0_30px_rgba(34,197,94,0.5)] transition-all duration-500 group">
+                
+                <!-- WhatsApp Icon with Animation -->
+                <div class="relative">
+                    <svg class="w-8 h-8 group-hover:rotate-12 transition-transform duration-300" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12.017 2c-5.525 0-9.998 4.475-9.998 9.998 0 1.776.456 3.447 1.257 4.904L2 22l5.233-1.237c1.408.745 2.989 1.139 4.784 1.139 5.525 0 9.998-4.475 9.998-9.998S17.542 2 12.017 2zm5.956 14.274c-.254.714-1.26 1.311-1.967 1.465-.434.094-.998.139-2.895-.614-2.054-.815-3.406-2.904-3.512-3.04-.105-.136-.858-1.141-.858-2.177 0-1.036.545-1.547.738-1.759.194-.212.423-.265.564-.265.141 0 .282.007.405.014.129.008.302-.049.472.36.171.415.578 1.407.628 1.509.05.102.083.221.017.357-.067.136-.1.22-.2.338-.1.118-.211.263-.301.354-.101.1-.206.209-.089.41.118.2.524.865 1.124 1.401.774.691 1.426.904 1.628.005.202-.099.321-.159.479-.253.158-.094.267-.159.427-.095.159.064 1.016.479 1.191.565.175.087.292.131.335.204.043.074.043.428-.211 1.142z"/>
+                    </svg>
+                    <!-- Pulsing ring effect -->
+                    <div class="absolute inset-0 rounded-full border-2 border-green-400 animate-ping opacity-20"></div>
+                </div>
+                
+                <span class="neon-text">Chat on WhatsApp</span>
+                
+                <!-- Arrow with quantum effect -->
+                <div class="relative overflow-hidden">
+                    <span class="block transform group-hover:translate-x-1 transition-transform duration-300">→</span>
+                    <div class="absolute inset-0 bg-gradient-to-r from-transparent via-green-400 to-transparent -translate-x-full group-hover:animate-pulse"></div>
+                </div>
+            </a>
+            
+            <!-- Contact Info -->
+            <div class="mt-8 text-sm text-gray-400">
+                <p>📱 Available for innovative AI projects and consultations</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
