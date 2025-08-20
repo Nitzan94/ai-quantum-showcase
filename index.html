@@ -471,6 +471,30 @@
                 padding-left: 0.75rem !important;
                 padding-right: 0.75rem !important;
             }
+            
+            /* כותרת DIGITAL NEUROSCIENCE - צמצום לגבולות במובייל */
+            .text-6xl:has-text("DIGITAL NEUROSCIENCE"),
+            h2.text-6xl {
+                font-size: 2.8rem !important;
+                line-height: 1.1 !important;
+                padding: 0 1rem !important;
+                word-break: keep-all !important;
+                text-align: center !important;
+            }
+            
+            /* הקטנת כותרת ופסקה ב-CTA */
+            .text-3xl {
+                font-size: 1.75rem !important;
+            }
+            
+            .text-lg {
+                font-size: 1rem !important;
+            }
+            
+            /* הקטנת שם NITZAN BAR-NESS במובייל */
+            nav .text-xl {
+                font-size: 1rem !important;
+            }
         }
         
         /* Touch Mobile Interactions - חוויה מושלמת */
@@ -787,20 +811,14 @@
     <!-- Navigation -->
     <nav class="fixed top-0 left-0 right-0 z-50 p-6">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <div class="text-2xl font-bold neon-text text-cyan-400">NITZAN BAR-NESS</div>
+            <div class="text-xl font-bold neon-text text-cyan-400">NITZAN BAR-NESS</div>
             <div class="flex items-center gap-4">
-                <!-- Mobile Neuroscience Button -->
-                <a href="neuroscience-explained.html" class="md:hidden bg-purple-500 hover:bg-purple-600 text-white px-3 py-2 rounded-full text-xs font-bold transition-all duration-300 hover:scale-110 flex items-center gap-1">
-                    <span>🧠</span>
-                    <span>Science</span>
-                </a>
                 <!-- Desktop Navigation -->
                 <div class="hidden md:flex items-center gap-8">
                     <a href="#mcp" class="text-gray-300 hover:text-cyan-400 transition-colors">Protocol</a>
                     <a href="#claude-code" class="text-gray-300 hover:text-cyan-400 transition-colors">Code</a>
                     <a href="#elevenlabs" class="text-gray-300 hover:text-cyan-400 transition-colors">Audio</a>
                     <a href="#demo" class="text-gray-300 hover:text-cyan-400 transition-colors">Demo</a>
-                    <a href="neuroscience-explained.html" class="text-gray-300 hover:text-cyan-400 transition-colors">Science</a>
                 </div>
             </div>
         </div>
@@ -1319,7 +1337,7 @@
                 <div class="text-center mt-16">
                     <h3 class="text-3xl font-bold text-white mb-6">Ready to Explore the Future of AI?</h3>
                     <p class="text-lg text-gray-300 mb-8 max-w-3xl mx-auto">
-                        Dive deeper into the science behind this cognitive breakthrough or experience the neural network in action.
+                        Explore the science or experience the network.
                     </p>
                     <div class="flex flex-col md:flex-row gap-6 justify-center items-center">
                         <button onclick="window.location.href='neuroscience-explained.html'" 
@@ -1487,8 +1505,8 @@
                 }, 8000);
             });
             
-            // Add special hover effects
-            matrixBtn.addEventListener('mouseenter', () => {
+            // Matrix flicker effect function
+            function startMatrixFlicker() {
                 // Clear any existing flicker animation
                 if (matrixFlickerInterval) {
                     clearInterval(matrixFlickerInterval);
@@ -1516,17 +1534,31 @@
                         matrixBtn.textContent = originalText;
                     }
                 }, 200);
-            });
+            }
             
-            // Add mouse leave to ensure cleanup
-            matrixBtn.addEventListener('mouseleave', () => {
+            function stopMatrixFlicker() {
                 if (matrixFlickerInterval) {
                     clearInterval(matrixFlickerInterval);
                     matrixFlickerInterval = null;
                 }
                 // Force restore original text
                 matrixBtn.textContent = 'ENTER THE MATRIX';
-            });
+            }
+            
+            // Add hover effects for desktop
+            matrixBtn.addEventListener('mouseenter', startMatrixFlicker);
+            matrixBtn.addEventListener('mouseleave', stopMatrixFlicker);
+            
+            // Add touch effects for mobile
+            matrixBtn.addEventListener('touchstart', async (e) => {
+                // Resume audio context first for mobile
+                await window.matrixSounds.resume();
+                startMatrixFlicker();
+                // Play sound effect on touch
+                window.matrixSounds.play('hover'); // Or use a different sound if preferred
+            }, { passive: true });
+            
+            matrixBtn.addEventListener('touchend', stopMatrixFlicker, { passive: true });
             
             // Window resize handler for Matrix rain and Quantum Realm
             window.addEventListener('resize', () => {
