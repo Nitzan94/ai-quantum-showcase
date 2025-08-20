@@ -236,34 +236,49 @@
         }
         
         .quantum-controls {
-            display: flex;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
             gap: 15px;
             margin-top: 20px;
-            flex-wrap: wrap;
             align-items: center;
             justify-content: center;
+            max-width: 100%;
         }
         
         .quantum-control {
-            background: rgba(138, 43, 226, 0.2);
-            border: 1px solid #8a2be2;
-            border-radius: 8px;
-            padding: 8px 15px;
-            color: #8a2be2;
+            background: linear-gradient(135deg, rgba(0, 245, 255, 0.15), rgba(138, 43, 226, 0.25));
+            border: 2px solid #00f5ff;
+            border-radius: 12px;
+            padding: 12px 18px;
+            color: #00f5ff;
             font-family: 'JetBrains Mono', monospace;
-            font-size: 12px;
-            transition: all 0.3s ease;
+            font-size: 13px;
+            font-weight: 600;
+            transition: all 0.4s ease;
             cursor: pointer;
+            text-shadow: 0 0 10px rgba(0, 245, 255, 0.5);
+            box-shadow: 0 4px 15px rgba(0, 245, 255, 0.2);
+            min-height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
         }
         
         .quantum-control:hover {
-            background: rgba(138, 43, 226, 0.4);
-            transform: scale(1.05);
+            background: linear-gradient(135deg, rgba(0, 245, 255, 0.3), rgba(138, 43, 226, 0.4));
+            border-color: #8a2be2;
+            color: #ff00ff;
+            transform: scale(1.08);
+            box-shadow: 0 6px 25px rgba(138, 43, 226, 0.4);
         }
         
         .quantum-control.active {
-            background: rgba(138, 43, 226, 0.6);
-            color: white;
+            background: linear-gradient(135deg, rgba(0, 245, 255, 0.4), rgba(255, 0, 255, 0.3));
+            border-color: #ff00ff;
+            color: #ffffff;
+            transform: scale(1.05);
+            box-shadow: 0 8px 30px rgba(255, 0, 255, 0.5);
         }
         
         .quantum-close {
@@ -284,6 +299,199 @@
         .quantum-close:hover {
             background: rgba(138, 43, 226, 0.2);
             transform: rotate(90deg);
+        }
+        
+        /* ===== MOBILE QUANTUM REALM - מושלם למובייל ===== */
+        
+        @media (max-width: 768px) {
+            /* Hero Title - תיקון לא יוצא מהגבולות */
+            .hero-title {
+                font-size: 3.2rem !important;
+                line-height: 1.0 !important;
+                text-align: center;
+                word-break: keep-all;
+            }
+            
+            .energy-field {
+                width: 260px !important;
+                height: 260px !important;
+                margin: 0 auto 2rem auto !important;
+            }
+            
+            /* הזזה ימינה - ריכוז במרכז */
+            .relative.z-10.text-center {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+                text-align: center !important;
+            }
+            
+            /* Quantum Modal - נפלא במובייל */
+            .quantum-container {
+                max-width: 95vw !important;
+                max-height: 85vh !important;
+                padding: 20px !important;
+                margin: 20px auto !important;
+                overflow-y: auto;
+                border-radius: 16px !important;
+            }
+            
+            .quantum-playground {
+                height: 220px !important;
+                min-height: 220px !important;
+                border-radius: 12px !important;
+                margin-bottom: 15px !important;
+            }
+            
+            /* Buttons Quantum - חזקים ורואים */
+            .quantum-controls {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 12px !important;
+                margin-top: 15px !important;
+                padding: 0 10px !important;
+            }
+            
+            .quantum-control {
+                font-size: 12px !important;
+                padding: 14px 10px !important;
+                min-height: 50px !important;
+                font-weight: 700 !important;
+                border-width: 2px !important;
+                text-shadow: 0 0 15px rgba(0, 245, 255, 0.8) !important;
+                box-shadow: 0 5px 20px rgba(0, 245, 255, 0.3) !important;
+            }
+            
+            .quantum-header h2 {
+                font-size: 24px !important;
+                text-align: center !important;
+            }
+            
+            .quantum-signature {
+                font-size: 14px !important;
+                padding: 10px !important;
+            }
+            
+            /* Navigation Mobile */
+            nav .hidden.md\\:flex {
+                display: none !important;
+            }
+            
+            /* Hero Section - מושלם */
+            .text-7xl {
+                font-size: 3.2rem !important;
+                line-height: 1.0 !important;
+            }
+            
+            .text-3xl {
+                font-size: 1.6rem !important;
+                line-height: 1.2 !important;
+                padding: 0 1rem !important;
+            }
+            
+            .text-xl {
+                font-size: 1rem !important;
+                line-height: 1.4 !important;
+                padding: 0 1.5rem !important;
+            }
+            
+            /* Main Buttons - גדולים וחזקים */
+            .holographic-card {
+                padding: 18px 28px !important;
+                font-size: 16px !important;
+                min-height: 56px !important;
+                font-weight: 700 !important;
+            }
+            
+            /* Orbital Elements Mobile */
+            .relative.w-96.h-96 {
+                width: 260px !important;
+                height: 260px !important;
+            }
+            
+            /* Container פדינג */
+            .px-8 {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+            }
+            
+            .max-w-6xl {
+                max-width: 100% !important;
+                padding: 0 1rem !important;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            /* Extra Small Mobile - כל מכשיר יראה מושלם */
+            .hero-title {
+                font-size: 2.5rem !important;
+                line-height: 0.9 !important;
+            }
+            
+            .energy-field {
+                width: 220px !important;
+                height: 220px !important;
+            }
+            
+            .quantum-container {
+                padding: 16px !important;
+                margin: 10px !important;
+                max-height: 90vh !important;
+            }
+            
+            .quantum-controls {
+                grid-template-columns: 1fr 1fr !important;
+                gap: 8px !important;
+            }
+            
+            .quantum-control {
+                font-size: 11px !important;
+                padding: 12px 8px !important;
+                min-height: 46px !important;
+            }
+            
+            .quantum-playground {
+                height: 180px !important;
+            }
+            
+            .text-7xl {
+                font-size: 2.5rem !important;
+            }
+            
+            .text-3xl {
+                font-size: 1.4rem !important;
+            }
+            
+            .holographic-card {
+                padding: 16px 24px !important;
+                font-size: 15px !important;
+            }
+            
+            /* תיקון ריכוז במובייל קטן */
+            .px-8 {
+                padding-left: 0.75rem !important;
+                padding-right: 0.75rem !important;
+            }
+        }
+        
+        /* Touch Mobile Interactions - חוויה מושלמת */
+        @media (hover: none) and (pointer: coarse) {
+            .quantum-control:hover {
+                transform: none !important;
+            }
+            
+            .quantum-control:active {
+                transform: scale(0.95) !important;
+                transition: transform 0.15s ease !important;
+                background: linear-gradient(135deg, rgba(255, 0, 255, 0.4), rgba(0, 245, 255, 0.3)) !important;
+            }
+            
+            .holographic-card:hover {
+                transform: none !important;
+            }
+            
+            .holographic-card:active {
+                transform: scale(0.96) !important;
+                transition: transform 0.15s ease !important;
+            }
         }
         
         .quantum-particle {
