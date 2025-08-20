@@ -475,11 +475,12 @@
             /* כותרת DIGITAL NEUROSCIENCE - צמצום לגבולות במובייל */
             .text-6xl:has-text("DIGITAL NEUROSCIENCE"),
             h2.text-6xl {
-                font-size: 2.8rem !important;
-                line-height: 1.1 !important;
-                padding: 0 1rem !important;
-                word-break: keep-all !important;
+                font-size: 2.2rem !important;
+                line-height: 1.0 !important;
+                padding: 0 0.5rem !important;
+                word-break: break-word !important;
                 text-align: center !important;
+                hyphens: auto !important;
             }
             
             /* הקטנת כותרת ופסקה ב-CTA */
@@ -494,6 +495,22 @@
             /* הקטנת שם NITZAN BAR-NESS במובייל */
             nav .text-xl {
                 font-size: 1rem !important;
+            }
+            
+            /* תיקון כפתורים במובייל - QUANTUM REALM & NEURAL DOCS */
+            .holographic-card.px-12 {
+                padding: 1rem 1.5rem !important;
+                font-size: 0.9rem !important;
+                white-space: nowrap !important;
+            }
+            
+            /* תיקון מיוחד לכפתורי Hero */
+            #enter-quantum-btn,
+            #access-neural-docs-btn {
+                padding: 0.75rem 1rem !important;
+                font-size: 0.85rem !important;
+                min-width: auto !important;
+                text-align: center !important;
             }
         }
         
@@ -1422,6 +1439,9 @@
             
             // Setup GSAP animations
             setupAnimations();
+            
+            // Setup mobile audio initialization
+            setupMobileAudioInit();
         });
         
         function setupDemo() {
@@ -1470,6 +1490,59 @@
                 const audio = document.getElementById('generated-audio');
                 audio.src = './src/assets/audio/claude_mcp_explanation_english.mp3';
             }
+        }
+        
+        // Mobile Audio Initialization - תיקון לבעיית AudioContext במובייל
+        function setupMobileAudioInit() {
+            let audioInitialized = false;
+            
+            function initializeAudio() {
+                if (audioInitialized) return;
+                
+                // Resume AudioContext if it exists and is suspended
+                if (window.matrixSounds && window.matrixSounds.audioContext) {
+                    if (window.matrixSounds.audioContext.state === 'suspended') {
+                        console.log('🎵 Initializing AudioContext for mobile...');
+                        window.matrixSounds.audioContext.resume().then(() => {
+                            console.log('🎵 AudioContext resumed successfully for mobile');
+                            audioInitialized = true;
+                        }).catch(error => {
+                            console.warn('Failed to resume AudioContext:', error);
+                        });
+                    } else {
+                        audioInitialized = true;
+                    }
+                }
+                
+                // Also initialize main audio manager if it exists
+                if (window.audioManager && window.audioManager.audioContext) {
+                    if (window.audioManager.audioContext.state === 'suspended') {
+                        window.audioManager.resumeAudioContext().catch(error => {
+                            console.warn('Failed to resume main AudioContext:', error);
+                        });
+                    }
+                }
+            }
+            
+            // Add event listeners for first user interaction
+            const events = ['touchstart', 'click', 'keydown'];
+            
+            function handleFirstInteraction(e) {
+                console.log('🎵 First user interaction detected:', e.type);
+                initializeAudio();
+                
+                // Remove listeners after first interaction
+                events.forEach(event => {
+                    document.removeEventListener(event, handleFirstInteraction);
+                });
+            }
+            
+            // Add listeners for first interaction
+            events.forEach(event => {
+                document.addEventListener(event, handleFirstInteraction, { once: true });
+            });
+            
+            console.log('🎵 Mobile audio initialization setup complete');
         }
         
         // Matrix Button Setup Function
