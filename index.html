@@ -2,11 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="theme-color" content="#000000">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Quantum - Neural Integration Platform | Nitzan Bar-Ness</title>
     
     <!-- Meta Tags for SEO and Social -->
@@ -37,7 +33,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     
     <!-- Styles -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./src/css/tailwind.css">
     <link rel="stylesheet" href="./src/css/styles.css">
     
     <!-- External Libraries -->
@@ -62,21 +58,6 @@
         @keyframes orbit {
             0% { transform: rotate(0deg) translateX(200px) rotate(0deg); }
             100% { transform: rotate(360deg) translateX(200px) rotate(-360deg); }
-        }
-        
-        /* Mobile-optimized orbit animation */
-        @media (max-width: 768px) {
-            @keyframes orbit {
-                0% { transform: rotate(0deg) translateX(120px) rotate(0deg); }
-                100% { transform: rotate(360deg) translateX(120px) rotate(-360deg); }
-            }
-        }
-        
-        @media (max-width: 480px) {
-            @keyframes orbit {
-                0% { transform: rotate(0deg) translateX(80px) rotate(0deg); }
-                100% { transform: rotate(360deg) translateX(80px) rotate(-360deg); }
-            }
         }
         
         @keyframes holographic {
@@ -107,28 +88,6 @@
             animation: data-stream 8s linear infinite;
         }
         
-        /* Reduce particles on mobile */
-        @media (max-width: 768px) {
-            .data-particle {
-                width: 3px;
-                height: 15px;
-                animation-duration: 12s;
-            }
-            .data-particle:nth-child(n+4) {
-                display: none;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .data-particle {
-                width: 2px;
-                height: 10px;
-            }
-            .data-particle:nth-child(n+3) {
-                display: none;
-            }
-        }
-        
         @keyframes data-stream {
             0% { transform: translateY(100vh) scale(0); opacity: 0; }
             50% { opacity: 1; }
@@ -140,21 +99,6 @@
                 linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
             background-size: 50px 50px;
-        }
-        
-        /* Mobile-optimized grid */
-        @media (max-width: 768px) {
-            .cyberpunk-grid {
-                background-size: 30px 30px;
-                opacity: 0.5;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .cyberpunk-grid {
-                background-size: 20px 20px;
-                opacity: 0.3;
-            }
         }
         
         /* Matrix Rain Effect */
@@ -393,403 +337,6 @@
             padding: 5px 10px;
             border-radius: 5px;
             border: 1px solid rgba(138, 43, 226, 0.3);
-        }
-        
-        /* ===== MOBILE OPTIMIZATIONS ===== */
-        
-        /* Mobile-first responsive breakpoints */
-        @media (max-width: 1024px) {
-            .hero-container h1 {
-                font-size: 4rem !important;
-                line-height: 1.1;
-            }
-            
-            .orbital-element {
-                animation-duration: 25s;
-            }
-            
-            /* Reduce Three.js complexity */
-            .holographic-card {
-                backdrop-filter: blur(10px);
-            }
-        }
-        
-        /* Tablet optimizations */
-        @media (max-width: 768px) {
-            body {
-                font-size: 16px;
-            }
-            
-            .hero-container {
-                min-height: 90vh;
-                padding: 2rem 1rem;
-            }
-            
-            .hero-container h1 {
-                font-size: 3rem !important;
-                margin-bottom: 1rem;
-            }
-            
-            .hero-container h2 {
-                font-size: 1.5rem !important;
-                margin-bottom: 1.5rem;
-            }
-            
-            .hero-container p {
-                font-size: 1rem !important;
-                margin-bottom: 2rem;
-                padding: 0 1rem;
-            }
-            
-            .holographic-card {
-                margin: 1rem 0.5rem;
-                padding: 1.5rem !important;
-                backdrop-filter: blur(8px);
-            }
-            
-            .grid {
-                gap: 1rem !important;
-            }
-            
-            .text-6xl {
-                font-size: 2.5rem !important;
-            }
-            
-            .text-5xl {
-                font-size: 2rem !important;
-            }
-            
-            .text-3xl {
-                font-size: 1.5rem !important;
-            }
-            
-            .text-2xl {
-                font-size: 1.25rem !important;
-            }
-            
-            .px-16 {
-                padding-left: 2rem !important;
-                padding-right: 2rem !important;
-            }
-            
-            .py-32 {
-                padding-top: 4rem !important;
-                padding-bottom: 4rem !important;
-            }
-            
-            .px-8 {
-                padding-left: 1rem !important;
-                padding-right: 1rem !important;
-            }
-            
-            /* Navigation mobile optimization */
-            nav {
-                padding: 1rem !important;
-            }
-            
-            nav .hidden {
-                display: none !important;
-            }
-            
-            /* Mobile menu toggle */
-            nav .text-2xl {
-                font-size: 1.25rem !important;
-            }
-            
-            /* Optimize audio visualizer for tablet */
-            #audio-visualizer-container {
-                height: 200px !important;
-            }
-            
-            .w-80 {
-                width: 15rem !important;
-            }
-            
-            .h-80 {
-                height: 15rem !important;
-            }
-        }
-        
-        /* Mobile phone optimizations */
-        @media (max-width: 480px) {
-            body {
-                font-size: 14px;
-                line-height: 1.5;
-            }
-            
-            .hero-container {
-                min-height: 100vh;
-                padding: 1rem 0.5rem;
-            }
-            
-            .hero-container h1 {
-                font-size: 2.5rem !important;
-                line-height: 1;
-                margin-bottom: 1rem;
-            }
-            
-            .hero-container h2 {
-                font-size: 1.25rem !important;
-                margin-bottom: 1rem;
-            }
-            
-            .hero-container p {
-                font-size: 0.875rem !important;
-                margin-bottom: 1.5rem;
-                padding: 0;
-            }
-            
-            .energy-field {
-                width: 200px !important;
-                height: 200px !important;
-            }
-            
-            .holographic-card {
-                margin: 0.5rem 0.25rem;
-                padding: 1rem !important;
-                border-radius: 1rem;
-                backdrop-filter: blur(5px);
-            }
-            
-            .text-6xl {
-                font-size: 2rem !important;
-            }
-            
-            .text-5xl {
-                font-size: 1.75rem !important;
-            }
-            
-            .text-4xl {
-                font-size: 1.5rem !important;
-            }
-            
-            .text-3xl {
-                font-size: 1.25rem !important;
-            }
-            
-            .text-2xl {
-                font-size: 1.125rem !important;
-            }
-            
-            .text-xl {
-                font-size: 1rem !important;
-            }
-            
-            .px-16 {
-                padding-left: 1rem !important;
-                padding-right: 1rem !important;
-            }
-            
-            .px-12 {
-                padding-left: 1rem !important;
-                padding-right: 1rem !important;
-            }
-            
-            .px-8 {
-                padding-left: 0.75rem !important;
-                padding-right: 0.75rem !important;
-            }
-            
-            .py-32 {
-                padding-top: 3rem !important;
-                padding-bottom: 3rem !important;
-            }
-            
-            .py-16 {
-                padding-top: 2rem !important;
-                padding-bottom: 2rem !important;
-            }
-            
-            .py-12 {
-                padding-top: 1.5rem !important;
-                padding-bottom: 1.5rem !important;
-            }
-            
-            .py-6 {
-                padding-top: 1rem !important;
-                padding-bottom: 1rem !important;
-            }
-            
-            /* Mobile navigation */
-            nav {
-                padding: 0.75rem !important;
-            }
-            
-            nav .text-2xl {
-                font-size: 1.125rem !important;
-            }
-            
-            /* Mobile buttons */
-            button {
-                font-size: 0.875rem !important;
-                padding: 0.75rem 1.5rem !important;
-                min-height: 44px; /* iOS touch target */
-            }
-            
-            /* Audio visualizer mobile optimization */
-            #audio-visualizer-container {
-                height: 150px !important;
-            }
-            
-            .w-80 {
-                width: 12rem !important;
-            }
-            
-            .h-80 {
-                height: 12rem !important;
-            }
-            
-            /* Grid optimizations */
-            .grid {
-                gap: 0.75rem !important;
-            }
-            
-            .grid-cols-3 {
-                grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
-            }
-            
-            .grid-cols-4 {
-                grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-            }
-            
-            .md\:grid-cols-2 {
-                grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
-            }
-            
-            .md\:grid-cols-3 {
-                grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
-            }
-            
-            .md\:grid-cols-4 {
-                grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-            }
-            
-            /* Flex direction changes for mobile */
-            .flex-row {
-                flex-direction: column !important;
-            }
-            
-            .md\:flex-row {
-                flex-direction: column !important;
-            }
-            
-            /* Spacing adjustments */
-            .gap-8 {
-                gap: 1rem !important;
-            }
-            
-            .gap-6 {
-                gap: 0.75rem !important;
-            }
-            
-            .gap-4 {
-                gap: 0.5rem !important;
-            }
-            
-            /* Typography scaling */
-            .max-w-6xl {
-                max-width: 100% !important;
-                margin: 0 !important;
-                padding: 0 0.5rem !important;
-            }
-            
-            .max-w-4xl {
-                max-width: 100% !important;
-                margin: 0 !important;
-                padding: 0 0.5rem !important;
-            }
-            
-            .max-w-3xl {
-                max-width: 100% !important;
-                margin: 0 !important;
-                padding: 0 0.25rem !important;
-            }
-        }
-        
-        /* Ultra-small screens (older phones) */
-        @media (max-width: 360px) {
-            body {
-                font-size: 13px;
-            }
-            
-            .hero-container h1 {
-                font-size: 2rem !important;
-            }
-            
-            .hero-container h2 {
-                font-size: 1.125rem !important;
-            }
-            
-            .energy-field {
-                width: 150px !important;
-                height: 150px !important;
-            }
-            
-            .holographic-card {
-                margin: 0.25rem 0.125rem;
-                padding: 0.75rem !important;
-            }
-            
-            button {
-                font-size: 0.75rem !important;
-                padding: 0.625rem 1.25rem !important;
-            }
-        }
-        
-        /* Touch-friendly interactions */
-        @media (hover: none) and (pointer: coarse) {
-            /* Touch devices */
-            .hover\:scale-110:hover {
-                transform: scale(1.05) !important;
-                transition: transform 0.2s ease !important;
-            }
-            
-            button, .holographic-card, a {
-                min-height: 44px;
-                min-width: 44px;
-                cursor: pointer;
-            }
-            
-            /* Remove hover effects that don't work well on touch */
-            .hover\:text-cyan-400:hover {
-                color: inherit;
-            }
-            
-            /* Touch-specific feedback */
-            button:active, .holographic-card:active {
-                transform: scale(0.98);
-                transition: transform 0.1s ease;
-            }
-        }
-        
-        /* Optimize for slow devices */
-        @media (max-width: 768px) and (max-height: 1024px) {
-            /* Reduce animation complexity */
-            .orbital-element {
-                animation-duration: 30s;
-            }
-            
-            .neon-text {
-                animation: none;
-                text-shadow: 0 0 10px currentColor;
-            }
-            
-            .holographic-card {
-                animation: none;
-                transform: none !important;
-            }
-            
-            /* Simplify backgrounds */
-            .quantum-bg {
-                background: radial-gradient(circle at center, #8338ec 0%, #000000 70%) !important;
-            }
-        }
-        
-        /* High DPI mobile screens */
-        @media (-webkit-min-device-pixel-ratio: 2) and (max-width: 768px) {
-            .neon-text {
-                text-shadow: 0 0 5px currentColor, 0 0 10px currentColor;
-            }
         }
 
         /* Neural Docs Modal */
@@ -1034,53 +581,17 @@
     </div>
 
     <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 z-50 p-6 nav-blur">
+    <nav class="fixed top-0 left-0 right-0 z-50 p-6">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
             <div class="text-2xl font-bold neon-text text-cyan-400">NITZAN BAR-NESS</div>
-            
-            <!-- Desktop Navigation -->
             <div class="hidden md:flex items-center gap-8">
                 <a href="#mcp" class="text-gray-300 hover:text-cyan-400 transition-colors">Protocol</a>
                 <a href="#claude-code" class="text-gray-300 hover:text-cyan-400 transition-colors">Code</a>
                 <a href="#elevenlabs" class="text-gray-300 hover:text-cyan-400 transition-colors">Audio</a>
                 <a href="#demo" class="text-gray-300 hover:text-cyan-400 transition-colors">Demo</a>
             </div>
-            
-            <!-- Mobile Navigation Toggle -->
-            <button id="mobile-nav-toggle" class="md:hidden text-cyan-400 text-2xl focus:outline-none">
-                <span id="hamburger-icon">☰</span>
-            </button>
-        </div>
-        
-        <!-- Mobile Navigation Menu -->
-        <div id="mobile-nav-menu" class="md:hidden mt-4 bg-black/90 rounded-lg p-4 backdrop-blur-lg border border-cyan-400/20 transform translate-y-[-110%] opacity-0 transition-all duration-300 ease-out">
-            <div class="flex flex-col gap-4">
-                <a href="#mcp" class="text-gray-300 hover:text-cyan-400 transition-colors py-2 px-4 rounded-lg hover:bg-cyan-400/10 mobile-nav-link">🧠 Protocol</a>
-                <a href="#claude-code" class="text-gray-300 hover:text-cyan-400 transition-colors py-2 px-4 rounded-lg hover:bg-cyan-400/10 mobile-nav-link">⚡ Code</a>
-                <a href="#elevenlabs" class="text-gray-300 hover:text-cyan-400 transition-colors py-2 px-4 rounded-lg hover:bg-cyan-400/10 mobile-nav-link">🎵 Audio</a>
-                <a href="#demo" class="text-gray-300 hover:text-cyan-400 transition-colors py-2 px-4 rounded-lg hover:bg-cyan-400/10 mobile-nav-link">🚀 Demo</a>
-            </div>
         </div>
     </nav>
-    
-    <style>
-        .nav-blur {
-            backdrop-filter: blur(20px);
-            background: rgba(0, 0, 0, 0.8);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        #mobile-nav-menu.active {
-            transform: translateY(0);
-            opacity: 1;
-        }
-        
-        @media (max-width: 768px) {
-            nav {
-                padding: 1rem !important;
-            }
-        }
-    </style>
 
     <!-- Hero Section -->
     <section id="hero" class="relative min-h-screen flex items-center justify-center quantum-bg">
@@ -1307,47 +818,11 @@
                     <div>
                         <label class="block text-xl font-bold mb-4 text-pink-400">SYNTHESIS_RATE:</label>
                         <div class="holographic-card rounded-xl p-4">
-                            <input type="range" id="speed-slider" class="w-full h-3 bg-pink-400 rounded-full mobile-slider" min="0.5" max="2" step="0.1" value="1" 
-                                   style="-webkit-appearance: none; appearance: none; background: linear-gradient(to right, #ff1493 0%, #ff1493 50%, rgba(255, 20, 147, 0.3) 50%, rgba(255, 20, 147, 0.3) 100%); outline: none;">
+                            <input type="range" id="speed-slider" class="w-full h-2 bg-pink-400 rounded-full" min="0.5" max="2" step="0.1" value="1">
                             <div class="text-center text-pink-400 mt-2 font-bold" id="speed-display">1.0x QUANTUM</div>
                         </div>
                     </div>
                 </div>
-                
-                <style>
-                    .mobile-slider::-webkit-slider-thumb {
-                        -webkit-appearance: none;
-                        appearance: none;
-                        width: 24px;
-                        height: 24px;
-                        border-radius: 50%;
-                        background: #ff1493;
-                        cursor: pointer;
-                        box-shadow: 0 0 10px rgba(255, 20, 147, 0.5);
-                        border: 2px solid #ffffff;
-                    }
-                    
-                    .mobile-slider::-moz-range-thumb {
-                        width: 24px;
-                        height: 24px;
-                        border-radius: 50%;
-                        background: #ff1493;
-                        cursor: pointer;
-                        border: 2px solid #ffffff;
-                        box-shadow: 0 0 10px rgba(255, 20, 147, 0.5);
-                    }
-                    
-                    @media (max-width: 768px) {
-                        .mobile-slider {
-                            height: 6px !important;
-                        }
-                        
-                        .mobile-slider::-webkit-slider-thumb {
-                            width: 28px;
-                            height: 28px;
-                        }
-                    }
-                </style>
                 
                 <div class="text-center">
                     <button id="generate-speech-btn" class="holographic-card px-16 py-6 rounded-full text-2xl font-black neon-text text-cyan-400 border-2 border-cyan-400 hover:scale-110 transition-all duration-500">
@@ -1371,120 +846,20 @@
                         </audio>
                         
                         <!-- Custom audio controls -->
-                        <div class="custom-audio-controls flex items-center justify-center gap-4 mb-4 mobile-audio-controls">
-                            <button id="demo-play-pause" class="w-16 h-16 rounded-full bg-gradient-to-r from-cyan-400 to-purple-500 flex items-center justify-center text-white font-bold text-2xl hover:scale-110 transition-all duration-300 shadow-lg touch-button">
+                        <div class="custom-audio-controls flex items-center justify-center gap-4 mb-4">
+                            <button id="demo-play-pause" class="w-16 h-16 rounded-full bg-gradient-to-r from-cyan-400 to-purple-500 flex items-center justify-center text-white font-bold text-2xl hover:scale-110 transition-all duration-300 shadow-lg">
                                 ▶
                             </button>
-                            <div class="flex-1 mobile-progress-container">
+                            <div class="flex-1">
                                 <div class="text-cyan-400 text-sm font-mono mb-1">Demo Audio</div>
-                                <div class="w-full h-3 bg-gray-800/80 rounded-full progress-bar-container" id="progress-container">
+                                <div class="w-full h-2 bg-gray-800/80 rounded-full">
                                     <div id="demo-progress" class="h-full bg-gradient-to-r from-cyan-400 to-purple-400 rounded-full transition-all" style="width: 0%"></div>
                                 </div>
-                                <div class="flex justify-between text-xs text-gray-400 mt-1">
-                                    <span id="current-time">0:00</span>
-                                    <span id="total-time">0:00</span>
-                                </div>
-                            </div>
-                            <div class="mobile-volume-controls">
-                                <button id="volume-toggle" class="w-10 h-10 rounded-lg bg-gray-800/60 flex items-center justify-center text-cyan-400 hover:bg-gray-700/60 transition-all">
-                                    🔊
-                                </button>
                             </div>
                         </div>
-                        
-                        <style>
-                            .touch-button {
-                                min-width: 64px;
-                                min-height: 64px;
-                                -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-                            }
-                            
-                            .progress-bar-container {
-                                cursor: pointer;
-                                position: relative;
-                            }
-                            
-                            @media (max-width: 768px) {
-                                .mobile-audio-controls {
-                                    flex-direction: column;
-                                    gap: 1rem;
-                                    align-items: stretch;
-                                }
-                                
-                                .mobile-progress-container {
-                                    order: 1;
-                                    width: 100%;
-                                }
-                                
-                                .touch-button {
-                                    order: 2;
-                                    align-self: center;
-                                    min-width: 72px;
-                                    min-height: 72px;
-                                }
-                                
-                                .mobile-volume-controls {
-                                    order: 3;
-                                    align-self: center;
-                                }
-                                
-                                .progress-bar-container {
-                                    height: 8px !important;
-                                    border-radius: 4px;
-                                }
-                                
-                                .text-sm {
-                                    font-size: 1rem !important;
-                                }
-                            }
-                            
-                            @media (max-width: 480px) {
-                                .mobile-audio-controls {
-                                    padding: 1rem;
-                                    background: rgba(0, 0, 0, 0.3);
-                                    border-radius: 1rem;
-                                    margin: 1rem 0;
-                                }
-                                
-                                .progress-bar-container {
-                                    height: 10px !important;
-                                }
-                            }
-                        </style>
-                        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                            <button id="download-audio-btn" class="bg-gradient-to-r from-green-400 to-blue-400 px-6 py-3 rounded-full text-black font-bold hover:scale-105 transition-transform mobile-download-btn">
-                                📥 DOWNLOAD QUANTUM AUDIO
-                            </button>
-                            <button id="share-audio-btn" class="bg-gradient-to-r from-purple-400 to-pink-400 px-6 py-3 rounded-full text-white font-bold hover:scale-105 transition-transform mobile-share-btn">
-                                🔗 SHARE
-                            </button>
-                        </div>
-                        
-                        <style>
-                            .mobile-download-btn,
-                            .mobile-share-btn {
-                                min-height: 44px;
-                                -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-                            }
-                            
-                            @media (max-width: 768px) {
-                                .mobile-download-btn,
-                                .mobile-share-btn {
-                                    min-height: 48px;
-                                    font-size: 1rem;
-                                    padding: 0.75rem 1.5rem;
-                                }
-                            }
-                            
-                            @media (max-width: 480px) {
-                                .mobile-download-btn,
-                                .mobile-share-btn {
-                                    min-height: 52px;
-                                    width: 100%;
-                                    margin-bottom: 0.5rem;
-                                }
-                            }
-                        </style>
+                        <button id="download-audio-btn" class="bg-gradient-to-r from-green-400 to-blue-400 px-6 py-2 rounded-full text-black font-bold hover:scale-105 transition-transform">
+                            📥 DOWNLOAD QUANTUM AUDIO
+                        </button>
                     </div>
                 </div>
             </div>
@@ -1760,17 +1135,8 @@
         import QuantumRealm from './src/js/quantum-realm.js';
         import NeuralDocs from './src/js/neural-docs.js';
         
-        // Mobile detection and optimization
-        const isMobile = window.innerWidth < 768 || /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-        const isSlowDevice = navigator.hardwareConcurrency < 4;
-        
         // Initialize when DOM is ready
         document.addEventListener('DOMContentLoaded', () => {
-            // Setup mobile navigation
-            setupMobileNavigation();
-            
-            // Setup mobile-optimized performance
-            setupMobilePerformance();
             // Initialize audio manager
             window.audioManager = new AudioManager({
                 visualizations: true,
@@ -1820,14 +1186,8 @@
                 }, 2000);
             });
             
-            // Setup demo functionality with mobile optimizations
+            // Setup demo functionality
             setupDemo();
-            
-            // Setup mobile touch handlers
-            setupMobileTouch();
-            
-            // Setup mobile audio controls
-            setupMobileAudioControls();
             
             // Setup GSAP animations
             setupAnimations();
@@ -1878,26 +1238,6 @@
                 // Use existing audio file as demo
                 const audio = document.getElementById('generated-audio');
                 audio.src = './src/assets/audio/claude_mcp_explanation_english.mp3';
-                
-                // Dispatch custom event for mobile audio controls
-                document.dispatchEvent(new CustomEvent('audio-loaded', {
-                    detail: { audio: audio }
-                }));
-                
-                // Mobile-specific audio handling
-                if (isMobile) {
-                    // Preload metadata for mobile
-                    audio.preload = 'metadata';
-                    
-                    // Handle mobile audio restrictions
-                    audio.addEventListener('canplay', () => {
-                        showToast('Audio ready! Tap play to start.', 'success');
-                    });
-                    
-                    audio.addEventListener('error', () => {
-                        showToast('Audio failed to load. Please try again.', 'error');
-                    });
-                }
             }
         }
         
@@ -1974,316 +1314,6 @@
                 // Force restore original text
                 matrixBtn.textContent = 'ENTER THE MATRIX';
             });
-        }
-        
-        // Mobile Navigation Setup
-        function setupMobileNavigation() {
-            const mobileToggle = document.getElementById('mobile-nav-toggle');
-            const mobileMenu = document.getElementById('mobile-nav-menu');
-            const mobileLinks = document.querySelectorAll('.mobile-nav-link');
-            const hamburgerIcon = document.getElementById('hamburger-icon');
-            
-            if (!mobileToggle || !mobileMenu) return;
-            
-            let isMenuOpen = false;
-            
-            mobileToggle.addEventListener('click', (e) => {
-                e.preventDefault();
-                isMenuOpen = !isMenuOpen;
-                
-                if (isMenuOpen) {
-                    mobileMenu.classList.add('active');
-                    hamburgerIcon.textContent = '✖'; // X symbol
-                } else {
-                    mobileMenu.classList.remove('active');
-                    hamburgerIcon.textContent = '☰'; // Hamburger symbol
-                }
-            });
-            
-            // Close menu when clicking a link
-            mobileLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    isMenuOpen = false;
-                    mobileMenu.classList.remove('active');
-                    hamburgerIcon.textContent = '☰';
-                });
-            });
-            
-            // Close menu when clicking outside
-            document.addEventListener('click', (e) => {
-                if (isMenuOpen && !mobileToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
-                    isMenuOpen = false;
-                    mobileMenu.classList.remove('active');
-                    hamburgerIcon.textContent = '☰';
-                }
-            });
-        }
-        
-        // Mobile Performance Optimization
-        function setupMobilePerformance() {
-            if (!isMobile) return;
-            
-            // Reduce animation complexity on mobile
-            const style = document.createElement('style');
-            style.textContent = `
-                @media (max-width: 768px) {
-                    .orbital-element {
-                        animation-duration: 40s !important;
-                    }
-                    .neon-text {
-                        animation: none !important;
-                        text-shadow: 0 0 10px currentColor !important;
-                    }
-                    .holographic-card {
-                        animation: none !important;
-                    }
-                    .data-particle:nth-child(n+3) {
-                        display: none !important;
-                    }
-                }
-            `;
-            document.head.appendChild(style);
-            
-            // Defer heavy operations
-            setTimeout(() => {
-                // Load complex effects after initial render
-                if (window.threeSceneManager) {
-                    window.threeSceneManager.enableMobileOptimizations();
-                }
-                
-                // Optimize GSAP settings for mobile
-                if (window.gsap) {
-                    gsap.ticker.fps(30); // Reduce to 30fps on mobile
-                }
-            }, 1000);
-        }
-        
-        // Mobile Touch Handlers
-        function setupMobileTouch() {
-            if (!isMobile) return;
-            
-            // Prevent zoom on double tap for buttons
-            const touchElements = document.querySelectorAll('button, .holographic-card, .touch-button');
-            
-            touchElements.forEach(element => {
-                element.addEventListener('touchend', (e) => {
-                    e.preventDefault();
-                    e.target.click();
-                }, { passive: false });
-            });
-            
-            // Add haptic feedback if available
-            if (navigator.vibrate) {
-                document.querySelectorAll('button').forEach(button => {
-                    button.addEventListener('click', () => {
-                        navigator.vibrate(50); // Short vibration
-                    });
-                });
-            }
-            
-            // Optimize scroll behavior for mobile
-            let ticking = false;
-            
-            function updateScrollEffects() {
-                // Throttled scroll effects
-                const scrollY = window.scrollY;
-                const documentHeight = document.documentElement.scrollHeight - window.innerHeight;
-                const scrollPercent = (scrollY / documentHeight) * 100;
-                
-                // Update progress bar
-                const progressBar = document.querySelector('.scroll-progress');
-                if (progressBar) {
-                    progressBar.style.transform = `scaleX(${scrollPercent / 100})`;
-                }
-                
-                ticking = false;
-            }
-            
-            window.addEventListener('scroll', () => {
-                if (!ticking) {
-                    requestAnimationFrame(updateScrollEffects);
-                    ticking = true;
-                }
-            }, { passive: true });
-        }
-        
-        // Mobile Audio Controls
-        function setupMobileAudioControls() {
-            const progressContainer = document.getElementById('progress-container');
-            const demoProgress = document.getElementById('demo-progress');
-            const currentTimeEl = document.getElementById('current-time');
-            const totalTimeEl = document.getElementById('total-time');
-            const volumeToggle = document.getElementById('volume-toggle');
-            const shareBtn = document.getElementById('share-audio-btn');
-            
-            if (progressContainer) {
-                // Mobile-friendly progress bar interaction
-                progressContainer.addEventListener('click', (e) => {
-                    const rect = progressContainer.getBoundingClientRect();
-                    const clickX = e.clientX - rect.left;
-                    const percent = (clickX / rect.width) * 100;
-                    
-                    demoProgress.style.width = `${Math.max(0, Math.min(100, percent))}%`;
-                    
-                    // Update audio time if audio is loaded
-                    const audio = document.getElementById('generated-audio');
-                    if (audio && audio.duration) {
-                        audio.currentTime = (percent / 100) * audio.duration;
-                    }
-                });
-                
-                // Touch support for progress bar
-                progressContainer.addEventListener('touchstart', (e) => {
-                    e.preventDefault();
-                }, { passive: false });
-                
-                progressContainer.addEventListener('touchmove', (e) => {
-                    e.preventDefault();
-                    const touch = e.touches[0];
-                    const rect = progressContainer.getBoundingClientRect();
-                    const touchX = touch.clientX - rect.left;
-                    const percent = (touchX / rect.width) * 100;
-                    
-                    demoProgress.style.width = `${Math.max(0, Math.min(100, percent))}%`;
-                });
-            }
-            
-            if (volumeToggle) {
-                let isMuted = false;
-                volumeToggle.addEventListener('click', () => {
-                    isMuted = !isMuted;
-                    volumeToggle.textContent = isMuted ? '🔇' : '🔊';
-                    
-                    const audio = document.getElementById('generated-audio');
-                    if (audio) {
-                        audio.muted = isMuted;
-                    }
-                });
-            }
-            
-            if (shareBtn && navigator.share) {
-                shareBtn.addEventListener('click', async () => {
-                    try {
-                        await navigator.share({
-                            title: 'AI Quantum Audio',
-                            text: 'Check out this quantum-generated audio!',
-                            url: window.location.href
-                        });
-                    } catch (err) {
-                        console.log('Share failed:', err);
-                        // Fallback to clipboard
-                        if (navigator.clipboard) {
-                            navigator.clipboard.writeText(window.location.href);
-                            // Show toast notification
-                            showToast('Link copied to clipboard!', 'success');
-                        }
-                    }
-                });
-            } else if (shareBtn) {
-                // Fallback for browsers without Web Share API
-                shareBtn.addEventListener('click', () => {
-                    if (navigator.clipboard) {
-                        navigator.clipboard.writeText(window.location.href);
-                        showToast('Link copied to clipboard!', 'success');
-                    } else {
-                        // Ultra-fallback
-                        const textArea = document.createElement('textarea');
-                        textArea.value = window.location.href;
-                        document.body.appendChild(textArea);
-                        textArea.select();
-                        document.execCommand('copy');
-                        document.body.removeChild(textArea);
-                        showToast('Link copied!', 'success');
-                    }
-                });
-            }
-            
-            // Format time helper
-            function formatTime(seconds) {
-                const minutes = Math.floor(seconds / 60);
-                const remainingSeconds = Math.floor(seconds % 60);
-                return `${minutes}:${remainingSeconds.toString().padStart(2, '0')}`;
-            }
-            
-            // Update time displays
-            function updateTimeDisplays(audio) {
-                if (currentTimeEl && totalTimeEl) {
-                    currentTimeEl.textContent = formatTime(audio.currentTime || 0);
-                    totalTimeEl.textContent = formatTime(audio.duration || 0);
-                }
-            }
-            
-            // Listen for audio time updates
-            document.addEventListener('audio-loaded', (e) => {
-                const audio = e.detail.audio;
-                updateTimeDisplays(audio);
-                
-                audio.addEventListener('timeupdate', () => {
-                    updateTimeDisplays(audio);
-                    
-                    // Update progress bar
-                    if (audio.duration) {
-                        const percent = (audio.currentTime / audio.duration) * 100;
-                        demoProgress.style.width = `${percent}%`;
-                    }
-                });
-            });
-        }
-        
-        // Toast notification system for mobile
-        function showToast(message, type = 'info') {
-            const toast = document.createElement('div');
-            toast.className = `fixed bottom-4 left-4 right-4 md:left-auto md:right-4 md:max-w-sm p-4 rounded-lg text-white font-bold z-50 transform translate-y-full opacity-0 transition-all duration-300`;
-            
-            const colors = {
-                info: 'bg-blue-500',
-                success: 'bg-green-500',
-                warning: 'bg-yellow-500',
-                error: 'bg-red-500'
-            };
-            
-            toast.classList.add(colors[type] || colors.info);
-            toast.textContent = message;
-            
-            document.body.appendChild(toast);
-            
-            // Show toast
-            setTimeout(() => {
-                toast.style.transform = 'translateY(0)';
-                toast.style.opacity = '1';
-            }, 100);
-            
-            // Hide toast after 3 seconds
-            setTimeout(() => {
-                toast.style.transform = 'translateY(full)';
-                toast.style.opacity = '0';
-                
-                setTimeout(() => {
-                    document.body.removeChild(toast);
-                }, 300);
-            }, 3000);
-        }
-        
-        // Viewport height fix for mobile browsers
-        function setViewportHeight() {
-            const vh = window.innerHeight * 0.01;
-            document.documentElement.style.setProperty('--vh', `${vh}px`);
-        }
-        
-        setViewportHeight();
-        window.addEventListener('resize', setViewportHeight);
-        
-        // Orientation change handler
-        window.addEventListener('orientationchange', () => {
-            setTimeout(setViewportHeight, 100);
-            
-            // Reload certain components on orientation change
-            if (window.threeSceneManager) {
-                setTimeout(() => {
-                    window.threeSceneManager.handleResize();
-                }, 200);
-            }
-        });
             
             // Window resize handler for Matrix rain and Quantum Realm
             window.addEventListener('resize', () => {

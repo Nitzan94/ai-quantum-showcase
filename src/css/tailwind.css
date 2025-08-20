@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom CSS for AI Quantum */
+@layer base {
+    html {
+        font-family: 'Space Grotesk', sans-serif;
+    }
+}
+
+@layer components {
+    .quantum-gradient {
+        @apply bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500;
+        background-size: 400% 400%;
+        animation: gradient 15s ease infinite;
+    }
+    
+    .holographic-card {
+        @apply bg-black/30 backdrop-blur-md border border-white/10;
+        box-shadow: 0 8px 32px rgba(0, 245, 255, 0.15);
+    }
+    
+    .neon-text {
+        text-shadow: 0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor;
+    }
+}
